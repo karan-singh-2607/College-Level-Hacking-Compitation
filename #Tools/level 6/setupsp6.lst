@@ -1,0 +1,47 @@
+
+      
+
+[Windows 95 Params]														
+	WndTitle   = Microsoft Visual Studio 6.0 Service Pack 6 Setup													
+	WndMess    = Starting Visual Studio 6.0 Service Pack 6 Setup, please wait...													
+	TmpDirSize = 2000													
+	TmpDirName = tmp													
+	CmdLine    = acmsetup /T sp698vbo.stf /n "" /o "" /S %s %s /b1													
+	DrvModName = ACMSETUP													
+	DrvWinClass = Stuff-Shell													
+
+	CabinetFile = Vs6sp6b1.CAB													
+
+[Windows 95 Files]														
+	acmsetup.exe = acmsetup.exe 													
+	acmsetup.hlp = acmsetup.hlp 													
+	mssetup.dll = mssetup.dll 													
+	sp698vbo.dll = sp698vbo.dll													
+														
+	sp698vbo.inf = sp698vbo.inf													
+	sp698vbo.stf = sp698vbo.stf
+
+	eula.txt = eula.txt													
+
+[NT Intel Params]														
+	WndTitle   = Microsoft Visual Studio 6.0 Service Pack 6 Setup													
+	WndMess    = Starting Visual Studio 6.0 Service Pack 6 Setup, please wait...													
+	TmpDirSize = 2000													
+	TmpDirName = tmp													
+	CmdLine    = acmsetup /T sp698vbo.stf /n "" /o "" /S %s %s /b1													
+	DrvModName = ACMSETUP													
+	DrvWinClass = Stuff-Shell													
+
+	CabinetFile = Vs6sp6b1.CAB													
+
+[NT Intel Files]														
+	acmsetup.exe = acmsetup.exe 													
+	acmsetup.hlp = acmsetup.hlp 													
+	mssetup.dll = mssetup.dll 													
+	sp698vbo.dll = sp698vbo.dll													
+														
+	sp698vbo.inf = sp698vbo.inf													
+	sp698vbo.stf = sp698vbo.stf													
+	
+		eula.txt = eula.txt													
+	

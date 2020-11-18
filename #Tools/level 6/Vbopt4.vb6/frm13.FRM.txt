@@ -1,0 +1,7 @@
+frmBlkFile
+cmd_alloc
+cmd_locate
+ComboBox1
+cmd_close
+cmd_open
+ 1 

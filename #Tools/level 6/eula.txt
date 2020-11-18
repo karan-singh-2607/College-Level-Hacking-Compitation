@@ -1,0 +1,19 @@
+The Service Pack ("Service Pack") contains updated versions of one or more of the software products listed below. This document shall serve as an addendum ("Addendum") to the Microsoft End User License Agreement ("EULA") you acquired with version 6.0 or later of any of the Microsoft products listed below.  Except as provided in this Addendum, the Service Pack is licensed under the same terms and conditions contained in the EULA.  NOTE:  Certain components of the Service Pack (a "Component") may contain a separate end user license agreement (a "Component Agreement"), which may be provided only in English and by installing, copying or otherwise using the component governed by the Component Agreement, you agree to be bound by the terms of such Component Agreement.
+
+Visual Studio
+Visual C++
+Visual Basic
+Visual SourceSafe
+
+1.	If you do not agree to be bound by the terms of the EULA and this Addendum, you are not authorized to use the Service Pack.
+ 
+2.	The Service Pack may contain certain files identified in a "redist.txt" file.  Your use of any such files is subject to all terms and conditions of the EULA that relate to "Redistributables" (as defined in the EULA). If the redist.txt file is not included with the Service Pack, you have no distribution rights to any portion of the Service Pack.
+
+3.	Section 1.1 of the EULA is deleted in its entirety and replaced with the following:
+
+1.1	General License Grant. Microsoft grants to you as an individual, a personal, nonexclusive license to make and use copies of the SOFTWARE PRODUCT for the purpose of designing, developing, and testing your software product(s). You may install copies of the SOFTWARE PRODUCT on an unlimited number of computers provided that you are the only individual using the SOFTWARE PRODUCT. If you are an entity, Microsoft grants you the right to designate one individual within your organization to have the sole right to use the SOFTWARE PRODUCT in the manner provided above.
+
+4.	Microsoft also grants you the nonexclusive right to copy and distribute the Service Pack to any validly licensed end user of any of the products listed above.
+
+NOTE: The terms of a printed, paper EULA which may accompany the Service Pack supersede the terms of any on-screen EULA found within the Service Pack.
+

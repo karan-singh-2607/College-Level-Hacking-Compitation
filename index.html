@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>::Hackina::</title>
+	<link rel="stylesheet" href="style.css">
+    <style type="text/css">
+      <!--
+      html { overflow-y: scroll; }
+      a, a:visited, a:active {text-decoration: underline; font-size: 15px;}
+      a:hover { text-decoration: none }
+      body { margin: 0px 0px 0px 0px; font-family: courier new,monospace; font-size: 13px; text-decoration: none; }
+      table { border-collapse: collapse; }
+      img { border: 0px; }
+      -->
+    </style>
+  </head>
+  <body>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td rowspan="2" valign="top" style="width:222px;"><img alt="" src="./index_files/header.png" width="222" height="173"></td>
+        <td valign="top" style="background-image: url(./images/header_repeat.png); background-repeat: repeat-x;"><img alt="" src="./index_files/header2.png" width="108" height="150"></td>
+        <td style="text-align: right; background-image: url(./images/header_repeat.png); background-repeat: repeat-x;">
+         
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" valign="top">[<a href="index.html">HOME</a>] - [<a href="rules.html">RULES</a>] - [<a href="level 1-kaxilsjfo253jdj.html">START!</a>]</td>
+		<td>
+		 <div class="timer" id="demo" style="color:#fff; font-size:30px;" > </div>
+	  
+		</td>
+      </tr>
+    </tbody></table>
+    <div><br></div>
+    <table border="0" cellpadding="0" cellspacing="0" width="770">
+      <tbody><tr>
+        <td rowspan="3" style="height:5px; width:50px;">&nbsp;</td>
+        <td><h1>Hackina</h1></td>
+      </tr>
+	 
+      <tr>
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+              <td>
+              <!-- content -->
+
+Welcome to Hackina!<br><br>
+Before we begin please read all the rules of this event on rules section we are not responsible if you get eleminate automatically.<br><br>
+Take judgement sheet from the coordinator and fill your details, if your details are not listed on judgement sheet then you will be disqualifid from the event<br><br>
+Good luck and have fun!<br><br>
+<br><br><br><br><hr></td></tr></tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+<td style="width:110px;">
+Coordinator: </td><td style="width:400px;">Karan Singh (+91-9664483636)<br>
+Rajesh Royal (+91-8209206912)
+              <!-- end content -->
+              </td>
+			  <td style="width:381px; text-align:right;">
+			  Judge: Amit Kr. Bairwa
+			  </td>
+            </tr>
+          </tbody></table>
+          <br><br>
+        </td>
+      </tr>
+    </tbody></table>
+	
+<script> 
+var deadline = new Date("March 15, 2019 12:00:00").getTime(); 
+var x = setInterval(function() { 
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("demo").innerHTML = "Your Game Over In:  " + days + "d "  
++ hours + "h " + minutes + "m " + seconds + "s "; 
+    if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("demo").innerHTML = "Competition expired"; 
+    } 
+}, 1000); 
+</script> 
+</body></html>

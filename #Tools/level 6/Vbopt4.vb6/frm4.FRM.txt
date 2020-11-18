@@ -1,0 +1,14 @@
+frmResources
+ComboBox_Res1
+ListBox_Res1
+ComboBox_Res2
+cmd_Refresh
+Menu_Dump
+mi_Dump_Bytes
+mi_Dump_Words
+mi_Dump_Pretty
+Menu_Show
+mi_Show_Bytes
+mi_Show_Words
+mi_Show_Pretty
+ 1 

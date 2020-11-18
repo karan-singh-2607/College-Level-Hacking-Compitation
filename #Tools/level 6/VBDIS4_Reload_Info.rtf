@@ -1,0 +1,334 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fswiss Arial;}{\f1\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1512;}\viewkind4\uc1\pard\sl240\slmult0\qc\tx1417\lang1031\b\f0\fs28 VBOpt4 - \f1 reloaded\f0\par
+\b0\fs24 (\f1 September\f0  \f1 200\f0 7)\par
+\par
+\pard\sl240\slmult0\tx1417\f1\fs20 This is the very first alpha release of the VB4Opt4 4.11e decompiled sourcecode. I know that latest version of vbdis4 was Version 4.12e - so if you have it please mail it to me - or upload it to the ftp(see below).\par
+\par
+Decompilation of 'Vbopt4.exe' was possible because it was written and compiled in VB3. See http://maghia.free.fr/Board/viewtopic.php?t=769 for more + DL-for the VB3 Decompiler.\par
+\par
+The VB6 sourcecode still suffer from some problem that occured during decompilation. So let me introduce some of them:\par
+1. Type of decompiled Variable is unknown (... and so get's Variant)\par
+  Dim TwoByte\par
+  Open gFileName_dat For Binary Access Read As hFile\par
+  Get hFile, , TwoByte\par
+...\par
+As you see in that part of code it is important whether TwoByte is Long or Integer so the the programm know whether 4Byte or 2 byte to load from the File.\par
+\par
+Background: \tab Seem to be cause cause\par
+\tab Dim TwoByte% was used instead of\par
+\tab Dim TwoByte as Integer\par
+\tab in the original VB3-Sourcecode.\par
+\tab well I'll about checking VB3 Decompiler if that is fixable/improvable...\par
+\par
+\par
+2.SpinButton.vbx is not avaible in VB6 (well no big deal so there needs no need to talk about)\par
+\par
+Improvements:\par
+* Added commandline support.\par
+  Now you can pass the exe to decompile like this\par
+Vbopt4.exe" C:\\...\\Example\\SETUP_Vb4.EXE\par
+(Can also be use from the VB6_IDE File/Compile/CommandlineArguments then [Ok],[Cancel])\f0\par
+\par
+\f1 * Virtual address of bytecode is shown in decompile windows - when you click on a command in the MainWindow.\f0\par
+\par
+\par
+\f1 Please tell me, when you are also started working (bugfixing, understanding, improving) VBOPT4.\par
+\f0\par
+\f1 Projekt FTP:\f0\par
+\f1 f\f0 tp://VBDis\f1 4:\f0 VBDis\f1 4@ftp.angelfire.com\f0\par
+\f1 (ht\f0 tp://VBDis\f1 4.angelfire.com)\f0\par
+\f1\par
+cw2k\f0 @\f1 gmx.net\f0\par
+\pard\sl240\slmult0\qc\tx1417\b\fs28\par
+\par
+\par
+VBOpt4 - DoDi's Disassembler for VB4\par
+\b0\fs24 (October 1997)\par
+\pard\sl240\slmult0\tx1417\fs20\par
+After a lot of questions about a decompiler for VB4, I sat down and made a first rough version in form of a disassembler, similar to \b VBOpt3\b0 . In the moment only a display of the tokens is available, it's a long way to a real Discompiler like \b VBDis3\b0 . Nevertheless you'll find many astonishing things about the code produced by VB4, giving hints on how to optimize your programs.\par
+\par
+A rough decompiler output is shown for every subroutine, but it lacks proper handling of subroutines, properties and methods. A complete redesign is necessary, in order to achieve better results. But the problems are known now, so it's only a matter of time, until a much better decompiler will be available.\par
+\par
+The next step will provide a decompiler for setup programs. I hate that kind of programs, and want to know what they do \b before\b0  they can damage my system.\par
+\par
+Some features described below are unavailable in the \b demo version\b0  of \b VBOpt4\b0 .\par
+\par
+\par
+\b\fs28 Using VBOpt4\par
+\b0\fs20\par
+Start \b VBOpt4\b0  and open a make file (*.MAK, *.VBP) with \ul Files|*.MAK\ulnone  from the menu.\par
+\par
+The \b Scan\b0  window pops up and shows what the program is doing.\par
+\par
+Then you're asked for the \b project directory\b0 . The directory will be used for temporary files.\par
+\par
+If the project contains informations about both 16 and 32 bit versions, and both exe files are present, you're asked to specifiy the desired version.\par
+\par
+Then the sources are preprocessed, resulting in a single text file with only the lines that belong to the selected version (16/32 bit). This file may be useful if you want to know which parts of your sources are really compiled.\par
+\par
+The preprocessor of \b VBOpt4\b0  is optimized for speed, so it may be necessary that you enter the value of constants or expressions, that the preprocessor cannot evaluate itself.\par
+\par
+After the sources are scanned, \b VBOpt4\b0  compares them with the executable file, to verify that the declarations are valid for that program. If not, or if the program exceeds some limits of the demo version, a message is displayed and the program terminated.\par
+\par
+If no errors occured so far, two windows appear in the main window, with your sources in the \b Source\b0  window and the tokens of the compiled program in the \b Exe\b0  window.\par
+\par
+Then you can choose a module and a section from any of these windows. The \b Sync\b0  button selects and displays the same section as currently shown in the other window.\par
+\par
+Depending on the resolution and size of your screen it may be difficult to read text shown with a monospaced font. In this case you can select \ul View | Fixed Font\ulnone  from the menu and set the size and attributes of that font as desired.\par
+\par
+\page\b\fs24 Window Overview\par
+\b0\fs20\par
+The \b Main\b0  window contains the \b Source \b0 window with your source code and the \b Exe\b0  window with the tokens of the compiled program. From the menu you can open more windows:\par
+\par
+\ul\b Window\tab Contents\par
+\ulnone About\b0\tab version and copyright of the program\b\par
+\b0 Assembler\tab all defined assembly instructions\par
+\b Classes\b0\tab all OLE classes found in the program and the standard DLLs of VB4.\par
+\b Controls\b0\tab the custom controls built into \b VBOpt4\b0\par
+References\tab all locations that reference the selected location in the exe file\par
+\b Resource\b0\tab the resources of the exe file\par
+\b Scan\b0\tab the progress of scanning the sources and the exe file\par
+Segments\tab dumps of all locations found in the segments of the exe file\par
+Tables\tab all general tables with informations about the program\par
+\b Text\b0\tab any text file (in the Main window)\par
+Tokens\tab all defined exe tokens\b\par
+Types\b0\tab the user defined types (UDT) found in the source code\par
+\b Variables\b0\tab the variables of the program\par
+\par
+Most windows need no special description (or are unavailable in the demo version).\par
+\par
+With the right mouse button a popup menu is available in most output listboxes, that allows to file, print, or copy the contents to a new window. Suggestions for other practical improvements are appreciated.\par
+\par
+\b\fs24\page The Token Display\par
+\b0\fs20\par
+The \b Exe\b0  window shows the offset of the tokens relative to the start of the subroutine, a description (if the meaning of the token is roughly known), and the arguments.\par
+\par
+At the same time, the decompiled code is shown in another window. The decompiler must be redesigned from scratch, so the output is provided only as an example of the possibilities.\par
+\par
+Some lines containing "\b newline\b0 " (or something equivalent) are inserted in places where the end of a statement is assumed, but not guaranteed. You can create reliable marks for the statements by putting an "\b On Error\b0 " statement into your source code, forcing VB4 to compile "\b statement\b0 " tokens for every statement.\par
+\par
+Lines with \b line numbers\b0  are always flagged correctly, with possible multiple occurences of the same number, due to a bug in the VB4 compiler.\par
+\par
+Most tokens found in VB4 programs are displayed with a description. Unknown tokens or tokens with a wrong description of it's arguments switch the display to a hex dump until the end of the subroutine.\par
+\par
+\b The arguments of the tokens\b0  are displayed as variable names, whenever a declared variable is accessed. To clarify the operation of the tokens and the type of variables, the following \b additional type characters\b0  are used:\par
+\f1\'b0\f0\tab Byte\par
+\f1\'b2\f0\tab Boolean\par
+\f1\'b3\f0\tab String * <fixed length>\par
+~\tab Variant\par
+/\tab Date\par
+\{\tab User Defined Type (like a struct in C)\par
+.\tab any object (with properties and methods)\par
+2\tab 2 byte operand like % and Boolean\par
+4\tab 4 byte operand like & and ! (or a pointer)\par
+8\tab 8 byte operand like @ and #\par
+^\tab is sometimes used to denote a pointer or reference\par
+\par
+\b Other buttons\b0  in the \b Source \b0 and \b Exe\b0  windows are:\par
+\par
+\ul Sync\ulnone  shows the same subroutine as is currently displayed in the other window.\par
+\par
+\b\fs24\page Some Background Information\par
+\b0\fs20\par
+When you open a project for the first time, an \b extensive scan of the whole project\b0  is executed. During this time the \b Scan\b0  window is displayed, showing the progress of the analysis.\par
+The tables created from this step are saved to files and used when you reopen the same project later (not in the demo version).\par
+\par
+The first action is to \b preprocess all conditionals\b0  (#If...) in the sources. The preprocessed text is saved to a \b *.T0\b0  file, where * is the project name. Constants are not replaced in this step, to keep the source text as close to the original as possible. Predefined are the constants \b True\b0  and \b False\b0 , as well as \b Win16\b0  and \b Win32\b0 , depending on the exe type. Constants found in the make file are added to this list. Expressions in \b #If\b0  and \b #ElseIf\b0  statements may evaluate to wrong results, currently no operator precedence is implemented.\par
+\par
+\b Therefore you should use not more than one "And" or "Or" in conditional expressions.\par
+\b0\par
+Then a map of all sections in the source files is created (e.g. forms, declarations, subroutines), used to display the source modules in the \b Source \b0 window.\par
+\par
+Descriptions for all \b User Defined Types\b0  are created, used to determine the locations of local variables in the subroutines, and the member names when a Type variable is accessed.\par
+\par
+Then the exe file is scanned, resulting in a complete list of all modules, subroutines and other elements.\par
+\par
+The \b Forms\b0  found in the exe file are displayed in text format, ready for usage with VB4. Some sizes may be shown incorrectly, I hope this can be fixed in some later version.\par
+\b VBDis3\b0  can handle any custom controls, when a description (*.300) is provided, but cannot display the forms in text format. Therefore all forms must be converted to text format using VB3, sometimes a lengty operation. This was changed in \b VBOpt4\b0 , now the forms can be output directly in text format, with the consequence that only the fully known controls built into the VB runtime DLL can be handled.\par
+\par
+\b Constants\b0  are never stored in specific locations, their values are displayed on every occurence in the \b Exe\b0  window.\par
+\par
+Then the result is displayed in the \b Source \b0 and \b Exe\b0  windows. When you select a subroutine in the \b Source \b0 window, the locations of the local variables are determined. The offsets calculated in this step are used to display the names of the variables in the \b Exe\b0  window. Incorrect calculations will result from declarations containing Constant names instead of numeric values, as in "var As String * someConstant" or "var(low To high)". In this case \b VBOpt4\b0  asks you to enter the correct value of the expression.\par
+\par
+\b Therefore you should replace all constants in such expressions by their numeric value before using VBOpt4.\par
+\b0\par
+A lot of temporary variables are displayed in most subroutines. You can determine such variables by offsets below the last local variable shown in the local variables list. The search for local variables in the source files is terminated with the first executable statement, because this can result in temporary variables inserted by the compiler, before the next Dim statement.\par
+\par
+\b Therefore you must place all Dim statements at the begin of a subroutine, to obtain a complete list of the local variables.\par
+\b0\par
+The primary goal of the future \b VBDis4\b0  is to decompile setup programs. Therefore I use SETUP1.VBP from the VB4 setupkit directory to test and improve the decompiler. You can compile this project and check the capabilities of \b VBOpt4\b0  with it, too.\par
+\par
+\par
+\b\fs24 VB5 Support\par
+\b0\fs20\par
+VB5 can compile to tokenized or native executables. Detection of the appropriate exe type should work, but the disassembler may not show all tokens or instructions yet.\par
+\par
+In native code, unused subroutines are removed from the exe files. This will be checked in the next version of the disassembler, but currently the relation between source code and disassembled code may show the wrong subroutines. This applies to all BAS modules, FRM and CLS modules should not be affected.\par
+\par
+The properties of forms and controls have changed, this should be reflected in the next version, with *.500 description files.\par
+\par
+\b\fs24\page Current Limitations\par
+\b0\fs20\par
+If your \b project\b0  sources \b differ\b0  from the compiled program, \b VBOpt4\b0  is terminated. The \b demo\b0  versions have more restrictions, in the maximum number of forms, variables...\par
+\par
+\b Different versions of VB4\b0  may have different allocations strategies for variables. At least the TR6 beta creates much more code and uses many more temporary variables than the following releases. This may result in incorrect variable names shown in the \b Exe\b0  window.\par
+\par
+\b VBOpt4\b0  may crash with out-of-memory and subscript errors if a project is too big. If this occurs, I'll introduce range checks in the demo version to prevent such crashes, and the registered versions will be updated to overcome such limits.\par
+\par
+\b Constants\b0  are \b not\b0  evaluated in \b Dim\b0  statements, you can enter the appropriate value in an InputBox.\par
+\par
+\b Local variables\b0  can be handled only if the declarations occur at the begin of a subroutine. Intermediate statements may result in temporary variables allocated by the compiler, moving the declared variables to some unknown location, depending on the version of the compiler.\par
+\par
+\b Function types\b0  are not always correct, or ambiguous. In the registered version you can enter the correct type of the functions and all variables.\par
+\par
+\b Property functions\b0  are not properly handled ;-)\par
+\par
+\b Objects, methods and properties\b0  are partially handled.\par
+\par
+Only the \b controls\b0  built into the VB4 runtime DLL can be handled now. The registered version allows to create more descriptions.\par
+\par
+\b\fs24\page History of VBOpt4\par
+\b0\fs20\par
+\ul ToDo List\par
+\ulnone\par
+- Better decompiler.\par
+\par
+- Tracking pointers through multiple dereference steps.\par
+\par
+- Edit types of variables and functions.\par
+\par
+- Better handling of argument lists in subroutines and calls.\par
+\par
+- Better handling of classes\par
+\par
+- Handling of new VB5 project types\par
+\par
+- Detect and exclude unused functions in VB5 native projects\par
+\par
+- Handle VB5 controls\par
+\par
+\ul Version 4.11 from October 1997\par
+\ulnone\par
+- Handling of VB5\par
+\par
+- Create Projects\par
+\par
+- Some size limits removed\par
+\par
+\ul Version 4.10 from August 1997\par
+\ulnone\par
+- Simple decompiler.\par
+\par
+- Most tokens are known.\par
+\par
+- Handling of Class modules.\par
+\par
+- Handling of intrinsic functions, built into VB*.DLL\par
+\par
+- Single window for all variables, with selectable scopes.\ul\par
+\ulnone\par
+\ul Version 4.05 from October 1996\par
+\ulnone\par
+- Handling of both 16 and 32 bit programs.\par
+\par
+- Display of control names, methods and properties.\par
+\par
+- Correct font size in forms.\par
+\par
+\ul Version 4.16.04 from June 1996\par
+\ulnone\par
+- Evaluation of class references, needed to show properties and methods. The information about classes are derived from TYPELIB informations, found in DLLs, OLBs and TLBs.\par
+\par
+- The data structures found in 16- and 32-bit executables are very similar, so the same strategies can be used for both kinds, though the different structure of the exe files themselves may be better handled in different programs, with a common front end that detects the type of the program and invokes the appropriate back end.\par
+\par
+\ul Version 4.16.03 from April 1996\par
+\ulnone\par
+- Modules, subroutines and variables are automatically matched between the executables and the sources. The \b Subroutines\b0  window and some buttons related to the manual assignment were removed.\par
+\par
+- All variables are located on the first pass through the source text, the display of variable names is now independent from the source code currently shown.\par
+\par
+- References to variables are always displayed with their name found in the source code.\par
+\par
+- Windows were added to display the global, static and local variables.\par
+\par
+- A single file is used for the preprocessed source code.\par
+\par
+\par
+\ul Version 4.16.02 from March 1996\par
+\ulnone\par
+The first published version for VB4 (16 bit).\par
+\par
+\b\fs24\page First Conclusions on VB4\par
+\b0\fs20\par
+VB4 does \b not\b0  compile the source code into the executables.\par
+Statement separators are created only if needed for error handling, forced with "\b On Error\b0 ".\par
+"\b Debug.Print\b0 " statements are not compiled into the executable, but "\b Stop\b0 " is.\par
+\par
+VB4 removes redundant type conversions, e.g. \b CInt\b0  from "i1%=CInt(i2%)", but preserves other conversions, e.g. \b CVar\b0  in "s1$=CVar(s2$)", resulting in \b CVar\b0  followed by \b CStr\b0 .\par
+\par
+No general descriptions for \b user defined types\b0  were found yet, only descriptors for Strings and Variants (possibly containing strings). The members of an UDT are accessed directly, whenever possible.\par
+Only in every \b Get\b0  and \b Put\b0  statement a lengthy description of variable UDTs is included.\par
+\par
+\b Constants\b0  are stored as tokens with immediate arguments, not as variables.\par
+I suppose this comes from the preprocessor of VB4, that replaces all constants by the value, thus decreasing the symbol table size of the compiler. Unfortunately the preprocessor doesn't evaluate constant expressions, resulting in superfluous operations at runtime.\par
+Therefore you cannot patch a constant value in a single place, as is possible with VB3.\par
+To encrypt and minimize the size of your program, replace string constants by variables and initialize them in the start procedure of the program.\par
+\par
+\b Forms\b0  are stored in a similar way as VB3 did, but now directly \b including the names\b0  of all controls.\par
+The names of the controls cannot be removed, because the controls are referenced by their name, at least if variables of type Form are used. The same applies to Control and Object variables and their properties and methods.\par
+\par
+Where VB3 created different tokens for the same function, VB4 now uses the \b same token\b0  for different tasks, e.g. "jz" and "jnz" for If, Else, Do, While, Select...\par
+\par
+VB4 calls subroutines in form or class modules, adding \b invisible arguments\b0  for the object itself (Me), and a possible return value.\par
+\b Methods\b0  are almost called with a Variant return argument, that is not used if the method doesn't return a value.\par
+\par
+VB4/16 can compile the routines of one module into different segments, based on the code size of the routines.\par
+\par
+VB4 creates some native \b inline code\b0  for subroutine calls, and true pointers through fixups.\par
+Though this may speed up execution, everybody can use a debugger, put breakpoints on any subroutine call and inspect or modify the arguments.\par
+Therefore you should never pass textual passwords to a subroutine, even in calls to subroutines inside your program. Better use a common variable, or encrypt the password before passing it to an external subroutine.\par
+\par
+\par
+\b\fs24\page What comes Next?\par
+\b0\fs20\par
+In the beginning it was not clear whether a decompiler for VB4 programs is feasable. Now I'm quite sure that it's possible. The only question is, whether it's \b desireable to publish\b0  such a tool or not. For VB3 it was necessary to publish \b VBDis3\b0 , forcing Microsoft to remove the source code from the programs compiled with future VB versions. On the other hand, \b VBDis3\b0  could definitely help a lot of programmers to recover lost sources!\par
+\par
+As you may already know, I hate setup programs that corrupt the INI files, autoexec.bat and config.sys of my system and overwrite DLLs, VBXs and OCXs with old versions or in different languages. Therefore I promised to publish at least a Discompiler for setup programs - and this one will come!\par
+\par
+But before I can publish it, I must find a way to protect programs against misuse of that decompiler. There are no data structures in VB4 programs that can be modified or removed, to confuse or crash a decompiler, but keep the program running. It were a poor solution to overwrite some bytes, just like putting in a prayer "This program shall not be decompiled".\par
+\par
+A handy restriction is a new feature built into \b VBOpt4\b0 : where the user had to convert all the forms created by \b VBDis3\b0  from binary to text format, \b VBDis4\b0  will create all modules in one pass as text. Therefore only the controls built into \b VBDis4\b0  can be used in a program, else it cannot be decompiled.\par
+\par
+\b VBOpt4\b0  is restricted to programs containing at most 8 forms and only the custom controls used in the setup1 program of the VB4 setup kit. Class modules and ActiveX controls are also unsupported.\par
+\par
+A decompiler will come, however, to recover lost source code. Every decompiler of this kind will be restricted to a specific program, so you need not fear about the privacy of your VB4 sources.\par
+\par
+\b In addition, if the installation of a Windows application doesn't become much more transparent to the user, more decompilers will come for future versions of VB and MS(V)C, and these will be able to decompile \ul at least\ulnone  setup programs.\par
+\b0\par
+A decompiler for C/C++ is a big task, so it may become a public project, with the sources available to all programmers willing to assist in developing a general decompiler for 80x86 processors, as I made myself already for 680x0 processors. As can be seen with VB4 programs, most code of a Windows application is contained in DLLs and common libraries like MFC or OWL. Once these parts are identified in a program, they mustn't be decompiled because they are already documented. Even better, every common subroutine allows to locate and type the data structures it uses, resulting in many useful informations about the rest of the program. This strategy was successfully tested for several compilers on Atari and Amiga systems, as well as on Unix workstations.\par
+\par
+\page\b\fs24 Recovering Lost Source Code\par
+\b0\fs20\par
+A decompiler can help you recover lost source code, and it's not a secret how easy it is, to get rid of some modules, with VB, or whole projects, with SourceSafe :-(\par
+\par
+I don't want to publish an unrestricted decompiler, but that is not necessary to recover lost source code. Every application, with more forms or custom controls as found in the Setup1 program, cannot be decompiled, without appropriate project files. So if you need to decompile a program, you must send it to me, together with a certification that you have the rights on that program, and then I'll create an appropriate dummy project for exactly that program. You can use that project as the key, that makes VBOpt4 show the decompiled source code.\par
+\par
+You should also send me all remaining sources, even from earlier versions, that I can include as many names for subroutines and variables as possible, into the new project\par
+\par
+For my efforts I plan to ask for $100.00 for every program. This doesn't cover the time I spend on a program, but should be acceptable with regards to the time that it takes for rewriting and testing the code, and also should discourage large scale software piracy.\par
+\par
+Possibly these conditions must be modified in the future, based on the count of modules or subroutines in a program.\par
+\par
+I cannot promise anything about the useability of the decompiled source code. The decompiler will be improved all the time, but in the moment a complete redesign is necessary, so better results as shown by the current demo version may not become available before the end of this year.\par
+\par
+If possible, I want to include VB5 into the new decompiler. At least it should be no great step from a working VB4 decompiler to a decompiler for VB5, for both tokenized and native code.\par
+\par
+\par
+DoDi\par
+(Dr. Hans-Peter Diettrich)\par
+\par
+DoDi@compuserve.com\par
+VBDis@aol.com\par
+http://members.aol.com/VBDis\par
+}
+ 

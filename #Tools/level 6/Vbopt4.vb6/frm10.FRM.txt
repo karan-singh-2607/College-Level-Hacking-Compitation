@@ -1,0 +1,9 @@
+frm10
+cmdOK
+cmdCancel
+TxtExample
+Chk_BoldFont
+TextBox2
+Label1
+Label2
+ 1 

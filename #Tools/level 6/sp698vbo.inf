@@ -1,0 +1,436 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Thu Mar 11 16:11:55 2004           **
+;**                                                                **
+;** Diamond Version: (32) 1.00.0602 (07/14/97)                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[Source Media Descriptions]
+; <disk number>, <disk label>, <file>, <path>
+ "1","Visual Studio 6.0 Service Pack 6 Setup","Vs6sp6B1.cab","."
+ "2","Visual Studio 6.0 Service Pack 6 Setup","Vs6sp6B2.cab","."
+ "3","Visual Studio 6.0 Service Pack 6 Setup","Vs6sp6B3.cab","."
+
+[Default File Settings]
+"STF_BACKUP" = ""
+"STF_COPY" = "YES"
+"STF_DATE" = "2004-03-11"
+"STF_DECOMPRESS" = "CABINET"
+"STF_OVERWRITE" = "OLDER"
+"STF_READONLY" = ""
+"STF_ROOT" = "YES"
+"STF_SETTIME" = "YES"
+"STF_TIME" = "0"
+"STF_VITAL" = ""
+
+;************* INF File list *****************
+
+[SetupProdCah]
+
+[Setup]
+"eula_txt" = 1,eula.txt,,,,2004-02-11,!DECOMPRESS,,OLDER,,,,,,,2302,,,,,
+"readme_htm_11" = 1,ReadMe.htm,,,,2004-02-11,!DECOMPRESS,,OLDER,,,,,,,6308,,,,,
+
+[Remove ACME Help Files]
+"acmsetup_gid"= 1,acmsetup.gid,,,!COPY,,,,,,REMOVE,,,,,0,,,,,
+"acmsetup_fts"= 1,acmsetup.fts,,,!COPY,,,,,,REMOVE,,,,,0,,,,,
+"acmsetup_ftg"= 1,acmsetup.ftg,,,!COPY,,,,,,REMOVE,,,,,0,,,,,
+
+[VB MSINET]
+"msinet_ocx_1" = 1,os\system\msinet.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,132880,,,,6.1.97.82,
+"msinet_dep_1" = 1,os\system\msinet.dep,,,,2004-02-17,,,OLDER,,,,,,,2405,,,,,
+
+[VB MSWINSCK]
+"mswinsck_ocx_1" = 1,os\system\mswinsck.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,124688,,,,6.1.97.82,
+"mswinsck_dep_1" = 1,os\system\mswinsck.dep,,,,2004-02-23,,,OLDER,,,,,,,2463,,,,,
+
+[VB TLBINF32]
+"tlbinf32_dll_1" = 1,os\system\tlbinf32.dll,,,,2004-02-23,,1033,OLDER,,,,,,,150528,SYSTEM,,,1.1.97.82,
+
+[Component Repository]
+"vcmagg_dll" = 1,Common\Tools\VCM\VCMAgg.dll,,,,2000-11-13,,1033,OLDER,,,,,,,82944,,,,6.1.0.313,
+"repvcm_dll" = 1,Common\Tools\VCM\RepVCM.dll,,,,2000-11-08,,1033,OLDER,,,,,,,606208,,,,6.1.0.313,
+
+[VB Oleaut Files]
+"oleaut32_dll" = 1,os\system\oleaut32.dll,,,,2000-04-12,,1033,OLDER,,,,,,,598288,SYSTEM,,,2.40.4275.1,
+"stdole2_tlb" = 1,os\system\stdole2.tlb,,,,1999-06-03,,1033,OLDER,,,,,,,17920,SYSTEM,,,2.40.4275.1,
+"olepro32_dll_2" = 1,os\system\olepro32.dll,,,,1999-03-08,,1033,OLDER,,,,,,,164112,SYSTEM,,,5.0.4275.1,
+"asycflt_dll" = 1,os\system\asycfilt.dll,,,,1999-03-08,,1033,OLDER,,,,,,,147728,SYSTEM,,,2.40.4275.1,
+
+[VB Runtime]
+"msvbvm50_dll" = 1,os\system\msvbvm60.dll,,,,2004-02-23,,1033,OLDER,,,,,,,1386496,SYSTEM,,,6.0.97.82,
+
+[vc MSVCRT40 DLL]
+"msvcrt40_dll" = 1,os\system\msvcrt40.dll,,,,1999-06-01,,1033,OLDER,,,,,,,326656,SYSTEM,,,4.22.0.0,
+
+[MFC 40 Dll]
+"mfc40_dll_4" = 1,os\system\mfc40.dll,,,,1999-06-01,,1033,OLDER,,,,,,,924432,SYSTEM,,,4.1.0.6140,
+"mfc40u_dll" = 1,os\system\mfc40u.dll,,,,1999-06-01,,1033,OLDER,,,,,,,924432,SYSTEM,,,4.1.0.6140,
+
+[vc MFC Os Retail]
+"mfc42_dll" = 1,os\system\mfc42.dll,,,,2004-02-27,,1033,OLDER,,,,,,,1019959,SYSTEM,,,6.0.9782.0,
+
+[Sys Files - CRT Dlls]
+"msvcrt_dll" = 1,os\system\msvcrt.dll,,,,2004-02-17,,1033,OLDER,,,,,,,278581,SYSTEM,,,6.0.9782.0,
+
+[Sys Files - Regsrv32]
+"regsvr32_exe_3" = 1,regsvr32.exe,,,,2000-09-15,,1033,OLDER,,,,,,,37136,SYSTEM,,,5.0.1641.1,
+
+[VC MFC OS Unicode Retail]
+"mfc42u_dll" = 1,os\system\mfc42u.dll,,,,2004-02-27,,1033,OLDER,,,,,,,1015864,SYSTEM,,,6.0.9782.0,
+
+[VB MSMASK32]
+"msmask32_ocx" = 1,os\system\msmask32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,167968,,,,6.0.84.18,
+"msmask32_dep" = 1,os\system\msmask32.dep,,,,2000-06-13,,,OLDER,,,,,,,2494,,,,,
+
+[VB STDFMT]
+"msstdfmt_dll" = 1,os\system\msstdfmt.dll,,,,2004-02-23,,1033,OLDER,,,,,,,119808,SYSTEM,,,6.1.97.82,
+"msstdfmt_dep" = 1,os\system\msstdfmt.dep,,,,2004-02-23,,,OLDER,,,,,,,2494,,,,,
+
+[VB PICCLP32]
+"picclp32_ocx" = 1,os\system\picclp32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,84512,,,,6.0.84.18,
+"picclp32_dep" = 1,os\system\picclp32.dep,,,,2000-06-13,,,OLDER,,,,,,,2494,,,,,
+
+[VB DBLIST32]
+"dblist32_ocx" = 1,os\system\dblist32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,215312,,,,6.1.97.82,
+"dblist32_dep" = 1,os\system\dblist32.dep,,,,2004-02-17,,,OLDER,,,,,,,2494,,,,,
+"dblist_srg" = 1,os\system\dblist.srg,,,,2000-06-13,,,OLDER,,,,,,,111,,,,,
+
+[VB RICHTX32]
+"richtx32_ocx" = 1,os\system\richtx32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,212240,,,,6.1.97.82,
+"richtx32_dep" = 1,os\system\richtx32.dep,,,,2004-02-17,,,OLDER,,,,,,,3008,,,,,
+
+[VB MSCHART]
+"mschart_ocx" = 1,os\system\mschrt20.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,1010720,,,,6.0.88.4,
+"mschart_dep" = 1,os\system\mschrt20.dep,,,,2000-06-13,,,OLDER,,,,,,,2492,,,,,
+
+[VB MCI32]
+"mci32_ocx" = 1,os\system\mci32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,200224,,,,6.0.84.18,
+"mci32_dep" = 1,os\system\mci32.dep,,,,2004-02-23,,,OLDER,,,,,,,2394,,,,,
+
+[VB MSDATLST]
+"datalist_ocx" = 1,os\system\msdatlst.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,234016,,,,6.0.84.18,
+"datalist_dep" = 1,os\system\MSDatLst.dep,,,,2000-06-13,,,OLDER,,,,,,,2494,,,,,
+
+[VB DATAGRID]
+"datagrid_ocx" = 1,os\system\MSDatGrd.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,275216,,,,6.1.97.82,
+"msdatgrd_dep" = 1,os\system\msdatgrd.dep,,,,2004-02-17,,,OLDER,,,,,,,2514,,,,,
+
+[VB COMDLG32]
+"comdlg32_ocx" = 1,os\system\comdlg32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,152848,,,,6.1.97.82,
+"comdlg32_dep" = 1,os\system\comdlg32.dep,,,,2004-02-23,,,OLDER,,,,,,,2494,,,,,
+
+[VB COMCTL32]
+"mscomctl_ocx" = 1,os\system\mscomctl.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,1081616,,,,6.1.97.82,
+"mscomctl_dep" = 1,os\system\MSComCtl.dep,,,,2004-02-17,,,OLDER,,,,,,,2494,,,,,
+"comctl32_ocx_3" = 1,os\system\comctl32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,609824,,,,6.0.81.5,
+"comctl32_dep_2" = 1,os\system\comctl32.dep,,,,2000-06-13,,,OLDER,,,,,,,2493,,,,,
+
+[VB COMCT332]
+"comct332_ocx" = 1,os\system\comct332.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,416528,,,,6.7.0.9782,
+"comct332_dep" = 1,os\system\comct332.dep,,,,2004-02-26,,,OLDER,,,,,,,3026,,,,,
+
+[VB COMCT232]
+"mscomct2_ocx" = 1,os\system\mscomct2.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,662288,,,,6.1.97.82,
+"mscomct2_dep" = 1,os\system\MSComCt2.dep,,,,2004-02-17,,,OLDER,,,,,,,2494,,,,,
+
+[VB ADODC]
+"adodc_ocx" = 1,os\system\msadodc.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,131856,,,,6.1.97.82,
+"adodc_dep" = 1,os\system\msadodc.dep,,,,2004-02-23,,,OLDER,,,,,,,2502,,,,,
+
+[dag Jet]
+"msjet35_dll" = 1,os\system\msjet35.dll,,,,2000-06-13,,1033,OLDER,,,,,,,1046288,SYSTEM,,,3.51.2723.0,
+"msrepl35_dll" = 1,os\system\msrepl35.dll,,,,2000-06-13,,1033,OLDER,,,,,,,415504,SYSTEM,,,3.51.2404.0,
+"msjt4jlt_dll" = 1,os\system\msjt4jlt.dll,,,,2000-06-13,,1033,OLDER,,,,,,,1234704,SYSTEM,,,3.52.2723.0,
+
+[VBA Additional Files]
+"expsrv_dll" = 1,os\system\expsrv.dll,,,,2004-02-25,,0,OLDER,,,,,,,380688,SYSTEM,,,6.1.0.9774,
+
+[VB MSSCRIPT]
+"msscript_ocx" = 1,os\system\msscript.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,107008,,,,1.0.0.3715,
+
+[(vsee) Repository Shared Files]
+"repodbc_dll" = 1,os\msapps\repostry\repodbc.dll,,,,2000-06-13,,1033,OLDER,,,,,,,860233,,,,6.10.9064.4,
+"reprc_dll" = 1,os\msapps\repostry\reprc.dll,,,,2000-06-13,,1033,OLDER,,,,,,,20240,,,,6.10.8253.0,
+"insrepim_dll" = 1,os\msapps\repostry\insrepim.dll,,,,2000-06-13,,1033,OLDER,,,,,,,44816,,,,6.10.8253.0,
+
+[ATL]
+"atl_dll_2" = 1,os\system\atl.dll,,,,2004-02-27,,1033,OLDER,,,,,,,74810,SYSTEM,,,3.0.9782.0,
+"atl_dll_1" = 1,os\system\ansi\atl.dll,,,,2004-02-27,,1033,OLDER,,,,,,,90169,SYSTEM,,,3.0.9782.0,
+
+[Active Scripting SCRRUN]
+"scrrun_dll" = 1,os\system\scrrun.dll,,,,2000-07-15,,1033,OLDER,,,,,,,151824,SYSTEM,,,5.0.0.3715,
+
+[Script Engine files]
+"dispex_dll" = 1,os\system\dispex.dll,,,,2000-07-15,,1033,OLDER,,,,,,,26896,SYSTEM,,,5.0.0.3715,
+"jscript_dll" = 1,os\system\jscript.dll,,,,2003-01-14,,1033,OLDER,,,,,,,487481,SYSTEM,,,5.1.0.8513,
+"vbscript_dll" = 1,os\system\vbscript.dll,,,,2003-01-14,,1033,OLDER,,,,,,,438330,SYSTEM,,,5.1.0.8513,
+
+[Scriptoids]
+"scrobj_dll_1" = 1,os\system\scrobj.dll,,,,2000-07-15,,1033,OLDER,,,,,,,165824,,,,1.0.0.3715,
+
+[Davinci Wrappers]
+"mdt2fw95_dll" = 1,MSDesign\mdt2fw95.dll,,,,2004-02-17,,1033,OLDER,,,,,,,61712,,,,2.0.0.9782,
+
+[Davinci Query]
+"mdt2qd_dll" = 1,MSDesign\mdt2qd.dll,,,,2004-02-17,,1033,OLDER,,,,,,,1253136,,,,2.0.0.9782,
+
+[Davinci DDS GRID]
+"mdt2g_dll" = 1,MSDesign\mdt2g.dll,,,,2002-05-22,,1033,OLDER,,,,,,,589824,,,,2.0.0.9586,
+"mdt2gkor_dll" = 1,MSDesign\mdt2gkor.dll,,,,2000-06-13,,1033,OLDER,,,,,,,503808,,,,2.0.0.8084,
+
+[Davinci Framework]
+"mdt2fw_dll" = 1,MSDesign\mdt2fw.dll,,,,2004-02-17,,1033,OLDER,,,,,,,484464,,,,2.0.0.9782,
+"mdt2fwui_dll_enu" = 1,msdesign\resource\1033\mdt2fwui.dll,,,,2000-08-15,,1033,OLDER,,,,,,,66832,,,,2.0.0.8958,
+
+[Davinci DDS]
+"mdt2dd_dll" = 1,MSDesign\mdt2dd.dll,,,,2004-02-17,,1033,OLDER,,,,,,,431888,,,,2.0.0.9782,
+"mdt2gddo_dll" = 1,MSDesign\mdt2gddo.dll,,,,2002-12-19,,1033,OLDER,,,,,,,47264,,,,2.0.0.9586,
+"mdt2gddr_dll" = 1,MSDesign\mdt2gddr.dll,,,,2004-02-17,,1033,OLDER,,,,,,,106256,,,,2.0.0.9782,
+
+[Davinci DDS FORMS]
+"mdt2df_dll" = 1,MSDesign\mdt2df.dll,,,,2002-05-22,,1033,OLDER,,,,,,,608528,,,,2.0.0.9586,
+"mdt2dfui_dll" = 1,MSDesign\mdt2dfx.dll,,,,2002-05-22,,1033,OLDER,,,,,,,11536,,,,2.0.0.9586,
+
+[Davinci Schema]
+"mdt2db_dll" = 1,MSDesign\mdt2db.dll,,,,2004-02-17,,1033,OLDER,,,,,,,637200,,,,2.0.0.9782,
+
+[Davinci Data Tool Specific]
+"mdt2dbns_dll" = 1,MSDesign\mdt2dbns.dll,,,,2004-02-17,,1033,OLDER,,,,,,,408848,,,,2.0.0.9782,
+"mdt2fref_dll" = 1,MSDesign\mdt2fref.dll,,,,2004-02-17,,1033,OLDER,,,,,,,28432,,,,2.0.0.9782,
+
+[VB MSFLXGRD]
+"msflxgrd_ocx" = 1,os\system\msflxgrd.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,260880,,,,6.1.97.82,
+"msflxgrd_dep" = 1,os\system\msflxgrd.dep,,,,2004-02-17,,,OLDER,,,,,,,2494,,,,,
+
+[Wizard Host]
+"hostwiz_dll" = 1,Common\Wizard98\Hostwiz.dll,,,,2000-07-15,,1033,OLDER,,,,,,,155648,,,,6.0.0.8450,
+
+[Remote Data Access]
+"msrdo20_dll" = 2,os\system\msrdo20.dll,,,,2004-02-23,,1033,OLDER,,,,,,,397824,SYSTEM,,,6.1.97.82,
+"rdocurs_dll" = 2,os\system\Rdocurs.dll,,,,2000-08-02,,1033,OLDER,,,,,,,151552,SYSTEM,,,6.0.88.4,
+"msrdo20_dep" = 2,os\system\msrdo20.dep,,,,2004-02-17,,,OLDER,,,,,,,2670,SYSTEM,,,,
+"msrdc20_ocx" = 2,os\system\msrdc20.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,178208,SYSTEM,,,6.0.84.18,
+"msrdc20_dep" = 2,os\system\msrdc20.dep,,,,2000-06-13,,,OLDER,,,,,,,2493,SYSTEM,,,,
+
+[VB Binding Manager]
+"msbind_dll" = 2,os\system\msbind.dll,,,,2004-02-23,,1033,OLDER,,,,,,,78848,,,,6.1.97.82,
+"msbind_dep" = 2,os\system\msbind.dep,,,,2004-02-23,,,OLDER,,,,,,,492,,,,,
+
+[DAO]
+"dao360_dll" = 2,os\system\dao360.dll,,,,2000-06-13,,0,OLDER,,,,,,,557328,SYSTEM,,,3.60.2521.8,
+
+[VB TABCTL32]
+"tabctl32_ocx" = 2,os\system\tabctl32.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,224016,,,,6.1.97.82,
+"tabctl32_dep" = 2,os\system\tabctl32.dep,,,,2004-02-23,,,OLDER,,,,,,,2494,,,,,
+
+[dag Data Env Control]
+"mshflxgd_ocx" = 2,os\system\mshflxgd.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,440352,SYSTEM,,,6.0.88.4,
+"mshflxgd_dep" = 2,os\system\mshflxgd.dep,,,,2000-08-02,,,OLDER,,,,,,,2522,SYSTEM,,,,
+
+[dag Data Env]
+"msdeui_dll_enu" = 2,Shared\DataEnv\Resource\1033\msdeui.dll,,,,2000-07-15,,1033,OLDER,,,,,,,33792,SYSTEM,,,6.0.88.62,
+"msde_dll" = 2,shared\DataEnv\msde.dll,,,,2004-02-23,,1033,OLDER,,,,,,,747520,SYSTEM,,,6.1.97.82,
+"msderun_dll" = 2,shared\DataEnv\msderun.dll,,,,2000-07-15,,1033,OLDER,,,,,,,136192,SYSTEM,,,6.0.88.4,
+"msderun_dep" = 2,shared\DataEnv\msderun.dep,,,,2000-06-13,,,OLDER,,,,,,,577,,,,,
+
+[viEditor - TriEdit]
+"triedit_dll" = 2,Shared\Triedit\triedit.dll,,,,2000-07-15,,1033,OLDER,,,,,,,204907,,,,6.1.0.8243,
+
+[Wizards]
+"dataform_ocx_1" = 2,VB98\Wizards\dataform.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,543504,,,,6.0.0.8804,
+
+[Compiler Files]
+"link_exe_1" = 2,VB98\link.exe,,,,1999-06-02,,1033,OLDER,,,,,,,462901,,,,6.0.8447.0,
+"c2_exe_2" = 2,VB98\c2.exe,,,,2000-07-15,,1033,OLDER,,,,,,,692224,,,,12.0.8783.0,
+
+[vc IDE and Tools]
+"msdis110_dll" = 2,VB98\msdis110.dll,,,,2000-07-15,,1033,OLDER,,,,,,,184320,,,,1.12.9438.0,
+
+[VB Page Designer]
+"htmutil_dll_1" = 2,os\system\htmutil.dll,,,,2000-07-15,,1033,OLDER,,,,,,,182754,,,,6.0.0.8405,
+
+[VB Core Files]
+"vb6_exe" = 2,VB98\vb6.exe,,,,2004-02-23,,1033 0,OLDER,,,,,,,1895424,,,,6.0.97.82,
+"vb6debug_dll" = 2,VB98\vb6debug.dll,,,,2000-07-15,,1033,OLDER,,,,,,,14096,SYSTEM,,,6.0.84.62,
+"vba6_dll" = 2,VB98\vba6.dll,,,,2004-02-23,,0,OLDER,,,,,,,1696528,,,,6.0.0.9782,
+"vb6ide_dll" = 2,VB98\vb6ide.dll,,,,2004-02-23,,1033,OLDER,,,,,,,1002256,,,,6.0.97.82,
+"ado210_chm" = 2,VB98\ado210.chm,,,,2000-07-15,,,OLDER,,,,,,,769740,,,,,
+
+[Connection Designer]
+"mscdrun_dll_2" = 2,os\system\mscdrun.dll,,,,2000-03-14,,1033,OLDER,,,,,,,49152,,,,6.0.88.4,
+"mscdrun_dep_2" = 2,os\system\mscdrun.dep,,,,2000-06-13,,,OLDER,,,,,,,2541,,,,,
+
+[Automation Manager]
+"autmgr32_exe_3" = 2,os\system\autmgr32.exe,,,,2000-07-15,,1033,OLDER,,,,,,,165680,,,,5.0.42.24,
+
+[VB DataBind]
+"dbadapt_dll_1" = 2,os\system\dbadapt.dll,,,,2000-07-15,,1033,OLDER,,,,,,,45056,,,,6.0.88.4,
+
+[VB TSQL]
+"vbsdidb_dll" = 2,VB98\tsql\vbsdidb.dll,,,,2004-02-23,,1033,OLDER,,,,,,,311296,,,,6.1.97.82,
+"vbsdiadd_dll" = 2,VB98\tsql\vbsdiadd.dll,,,,2000-09-15,,1033,OLDER,,,,,,,155648,,,,6.0.0.8225,
+"vbsdicli_exe" = 2,VB98\tsql\vbsdicli.exe,,,,2004-02-23,,1033,OLDER,,,,,,,81920,,,,6.1.97.82,
+"vbsdidb_srg_1" = 2,VB98\tsql\vbsdidb.srg,,,,2000-06-13,,,OLDER,,,,,,,111,,,,,
+
+[VB SQL Debugging]
+"sqlparse_dll" = 2,os\system\sqlparse.dll,,,,2000-07-15,,1033,OLDER,,,,,,,118784,SYSTEM,,,5.0.84.61,
+
+[VB Control/Report]
+"msdbrpt_dll_1" = 2,os\system\msdbrpt.dll,,,,2004-02-23,,1033,OLDER,,,,,,,334848,SYSTEM,,,6.1.97.82,
+"msdbrptr_dll_1" = 2,os\system\msdbrptr.dll,,,,2004-02-23,,1033,OLDER,,,,,,,322560,SYSTEM,,,6.1.97.82,
+"msdbrptr_dep_1" = 2,os\system\msdbrptr.dep,,,,2004-02-23,,,OLDER,,,,,,,2545,,,,,
+
+[AllVer Wizards]
+"appwiz_ocx" = 2,VB98\Wizards\appwiz.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,838416,,,,6.0.0.8450,
+"resedit_dll" = 2,VB98\Wizards\resedit.dll,,,,2000-07-15,,1033,OLDER,,,,,,,368640,,,,6.0.0.8450,
+
+[Setupkit Binary]
+"makecab_exe" = 2,VB98\Wizards\PDWizard\Makecab.exe,,,,2000-07-15,,1033,OLDER,,,,,,,154112,,,,1.0.603.4,
+"pdaddin_dll" = 2,VB98\Wizards\PDWizard\PDAddin.dll,,,,2000-07-15,,1033,OLDER,,,,,,,57344,,,,6.0.0.8450,
+"pdcmdln_exe" = 2,VB98\Wizards\PDWizard\PDCmdLn.exe,,,,2000-07-15,,1033,OLDER,,,,,,,57344,,,,6.0.0.8450,
+"pdwizard_ocx" = 2,VB98\Wizards\PDWizard\PDWizard.ocx,,,,2004-03-09,,1033,OLDER,,,,,,,1649424,,,,6.0.0.9782,
+"setup_exe_3" = 2,VB98\Wizards\PDWizard\Setup.exe,,,,2004-02-23,,1033,OLDER,,,,,,,139776,,,,6.0.97.82,
+"setup1_exe" = 2,VB98\Wizards\PDWizard\Setup1.exe,,,,2004-02-23,,1033,OLDER,,,,,,,249856,,,,6.0.0.9782,
+"st5unst_exe" = 2,VB98\Wizards\PDWizard\St6unst.exe,,,,2004-02-23,,1033,OLDER,,,,,,,73216,,,,6.0.97.82,
+"vb5dep_ini" = 2,VB98\Wizards\PDWizard\Vb6dep.ini,,,,2004-02-17,,,OLDER,,,,,,,24766,,,,,
+"dlgobjs_dll" = 2,VB98\Wizards\PDWizard\dlgobjs.dll,,,,2000-07-15,,1033,OLDER,,,,,,,81920,,,,4.0.1.23,
+
+[Setupkit Vb5stkit]
+"vb5stkit_dll" = 2,VB98\Wizards\PDWizard\Vb6stkit.dll,,,,2000-07-15,,1033,OLDER,,,,,,,101888,,,,6.0.84.50,
+
+[Setupkit Source]
+"begin_frm" = 2,VB98\Wizards\PDWizard\Setup1\Begin.frm,,,,2000-06-13,,,OLDER,,,,,,,7117,,,,,
+"begin_frx" = 2,VB98\Wizards\PDWizard\Setup1\Begin.frx,,,,2000-07-15,,,OLDER,,,,,,,3140,,,,,
+"common_bas" = 2,VB98\Wizards\PDWizard\Setup1\Common.bas,,,,2000-06-13,,,OLDER,,,,,,,73079,,,,,
+"commonrc_h" = 2,VB98\Wizards\PDWizard\Setup1\Commonrc.h,,,,2000-06-13,,,OLDER,,,,,,,1739,,,,,
+"commonrc_rc" = 2,VB98\Wizards\PDWizard\Setup1\Commonrc.rc,,,,2000-06-13,,,OLDER,,,,,,,3479,,,,,
+"copy_frm" = 2,VB98\Wizards\PDWizard\Setup1\Copy.frm,,,,2000-06-13,,,OLDER,,,,,,,3985,,,,,
+"copy_frx" = 2,VB98\Wizards\PDWizard\Setup1\Copy.frx,,,,2000-07-15,,,OLDER,,,,,,,1090,,,,,
+"dskspace_frm" = 2,VB98\Wizards\PDWizard\Setup1\Dskspace.frm,,,,2000-06-13,,,OLDER,,,,,,,13071,,,,,
+"dskspace_frx" = 2,VB98\Wizards\PDWizard\Setup1\Dskspace.frx,,,,2000-07-15,,,OLDER,,,,,,,1090,,,,,
+"group_frm" = 2,VB98\Wizards\PDWizard\Setup1\Group.frm,,,,2000-06-13,,,OLDER,,,,,,,8068,,,,,
+"group_frx" = 2,VB98\Wizards\PDWizard\Setup1\Group.frx,,,,2000-07-15,,,OLDER,,,,,,,1112,,,,,
+"install_bmp" = 2,VB98\Wizards\PDWizard\Setup1\install.bmp,,,,2000-07-15,,,OLDER,,,,,,,4918,,,,,
+"logging_bas" = 2,VB98\Wizards\PDWizard\Setup1\Logging.bas,,,,2000-06-13,,,OLDER,,,,,,,11102,,,,,
+"message_frm" = 2,VB98\Wizards\PDWizard\Setup1\Message.frm,,,,2000-06-13,,,OLDER,,,,,,,1611,,,,,
+"message_frx" = 2,VB98\Wizards\PDWizard\Setup1\Message.frx,,,,2000-07-15,,,OLDER,,,,,,,2180,,,,,
+"modshell_bas" = 2,VB98\Wizards\PDWizard\Setup1\modshell.bas,,,,2000-06-13,,,OLDER,,,,,,,1166,,,,,
+"path_frm" = 2,VB98\Wizards\PDWizard\Setup1\Path.frm,,,,2000-06-13,,,OLDER,,,,,,,10440,,,,,
+"path_frx" = 2,VB98\Wizards\PDWizard\Setup1\Path.frx,,,,2000-07-15,,,OLDER,,,,,,,1090,,,,,
+"serverdt_frm" = 2,VB98\Wizards\PDWizard\Setup1\Serverdt.frm,,,,2000-06-13,,,OLDER,,,,,,,16869,,,,,
+"serverdt_frx" = 2,VB98\Wizards\PDWizard\Setup1\Serverdt.frx,,,,2000-07-15,,,OLDER,,,,,,,1090,,,,,
+"setup1_bas" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.bas,,,,2000-06-13,,,OLDER,,,,,,,196757,,,,,
+"setup1_frm" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.frm,,,,2000-06-13,,,OLDER,,,,,,,24984,,,,,
+"setup1_frx" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.frx,,,,2000-07-15,,,OLDER,,,,,,,1278,,,,,
+"setup1_ico" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.ico,,,,2000-07-15,,,OLDER,,,,,,,1078,,,,,
+"setup1_rc" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.rc,,,,2000-06-13,,,OLDER,,,,,,,9025,,,,,
+"setup1_res" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.res,,,,2000-07-15,,,OLDER,,,,,,,17372,,,,,
+"setup1_vbp" = 2,VB98\Wizards\PDWizard\Setup1\Setup1.vbp,,,,2000-06-13,,,OLDER,,,,,,,1731,,,,,
+"setupres_bas" = 2,VB98\Wizards\PDWizard\Setup1\Setupres.bas,,,,2000-06-13,,,OLDER,,,,,,,6113,,,,,
+"setupres_h" = 2,VB98\Wizards\PDWizard\Setup1\Setupres.h,,,,2000-06-13,,,OLDER,,,,,,,4051,,,,,
+"vbshell_odl" = 2,VB98\Wizards\PDWizard\Setup1\vbshell.odl,,,,2000-06-13,,,OLDER,,,,,,,1890,,,,,
+"vbshell_tlb" = 2,VB98\Wizards\PDWizard\Setup1\vbshell.tlb,,,,2000-07-15,,,OLDER,,,,,,,2732,,,,,
+"welcome_frm" = 2,VB98\Wizards\PDWizard\Setup1\Welcome.frm,,,,2000-06-13,,,OLDER,,,,,,,5029,,,,,
+"welcome_frx" = 2,VB98\Wizards\PDWizard\Setup1\Welcome.frx,,,,2000-07-15,,,OLDER,,,,,,,2180,,,,,
+"registry_bas" = 2,VB98\Wizards\PDWizard\Setup1\registry.bas,,,,2000-06-13,,,OLDER,,,,,,,8611,,,,,
+"overwrit_frx" = 2,VB98\Wizards\PDWizard\Setup1\overwrit.frx,,,,2000-07-15,,,OLDER,,,,,,,12,,,,,
+"overwrit_frm" = 2,VB98\Wizards\PDWizard\Setup1\overwrit.frm,,,,2000-06-13,,,OLDER,,,,,,,4956,,,,,
+
+[Setupkit Redist]
+"co2c40en_dll_1" = 2,VB98\Wizards\PDWizard\Redist\co2c40en.dll,,,,2000-07-15,,1033,OLDER,,,,,,,193376,,,,4.6.1.106,
+"mfc40_dll_3" = 2,VB98\Wizards\PDWizard\Redist\mfc40.dll,,,,1999-06-01,,1033,OLDER,,,,,,,924432,,,,4.1.0.6140,
+"msvcrt40_dll_4" = 2,VB98\Wizards\PDWizard\Redist\msvcrt40.dll,,,,1999-06-01,,1033,OLDER,,,,,,,326656,,,,4.22.0.0,
+"comcat_dll_4" = 2,VB98\Wizards\PDWizard\Redist\comcat.dll,,,,1999-06-01,,1033,OLDER,,,,,,,22288,,,,4.71.1460.1,
+"asycfilt_dll_2" = 2,VB98\Wizards\PDWizard\Redist\asycfilt.dll,,,,1999-03-08,,1033,OLDER,,,,,,,147728,,,,2.40.4275.1,
+"oleaut32_dll_4" = 2,VB98\Wizards\PDWizard\Redist\oleaut32.dll,,,,2000-04-12,,1033,OLDER,,,,,,,598288,,,,2.40.4275.1,
+"olepro32_dll_4" = 2,VB98\Wizards\PDWizard\Redist\olepro32.dll,,,,1999-03-08,,1033,OLDER,,,,,,,164112,,,,5.0.4275.1,
+"stdole2_tlb_3" = 2,VB98\Wizards\PDWizard\Redist\stdole2.tlb,,,,1999-06-03,,1033,OLDER,,,,,,,17920,,,,2.40.4275.1,
+"msvcrt_dll_2" = 2,VB98\Wizards\PDWizard\Redist\msvcrt.dll,,,,2004-02-17,,1033,OLDER,,,,,,,278581,,,,6.0.9782.0,
+
+[VB Dataview]
+"dataview_dll" = 2,VB98\dataview.dll,,,,2000-08-14,,1033,OLDER,,,,,,,544768,SYSTEM,,,6.0.0.8957,
+
+[VB Conversation Object]
+"mscnvman_dll" = 2,os\system\mswcrun.dll,,,,2004-02-23,,1033,OLDER,,,,,,,300544,SYSTEM,,,6.1.97.82,
+"mswcrun_dep" = 2,os\system\mswcrun.dep,,,,2004-02-17,,,OLDER,,,,,,,2474,,,,,
+"wbclsdsr_ocx" = 2,os\system\wbclsdsr.ocx,,,,2004-02-23,,1033,OLDER,,,,,,,324608,,,,6.1.97.82,
+
+[VSS - SsexpHlp]
+"ssexp_chm_enu" = 2,ssusexp.chm,,,,2002-10-04,,,OLDER,,,,,,,701436,,,,,
+"ssusexp_chi" = 2,ssusexp.chi,,,,2002-10-04,,,OLDER,,,,,,,48080,,,,,
+
+[VSS Server NetSetup Root]
+"readmess_htm" = 2,readmess.htm,,,,2002-09-24,,,OLDER,,,,,,,80616,,,,,
+
+[VSS Server NetSetup Setup]
+"vss98net_inf" = 2,VSS\Netsetup\VSS98net.inf,,,,2004-02-27,,,OLDER,,,,,,,5411,,,,,
+"vss98net_stf_1" = 2,VSS\Netsetup\vss98net.stf,,,,2004-02-27,,,OLDER,,,,,,,13317,,,,,
+
+[Netsetup MFC70]
+"netmfc70_dll" = 3,VSS\Win32\mfc70.dll,,,,2002-01-05,,1033,,,,,,,,974848,,,,7.0.9466.0,
+"netmfc70chs_dll" = 3,VSS\Win32\mfc70chs.dll,,,,2002-01-05,,2052,,,,,,,,40960,,,,7.0.9466.0,
+"netmfc70cht_dll" = 3,VSS\Win32\mfc70cht.dll,,,,2002-01-05,,1028,,,,,,,,45056,,,,7.0.9466.0,
+"netmfc70jpn_dll" = 3,VSS\Win32\mfc70jpn.dll,,,,2002-01-05,,1041,,,,,,,,49152,,,,7.0.9466.0,
+"netmfc70kor_dll" = 3,VSS\Win32\mfc70kor.dll,,,,2002-01-05,,1042,,,,,,,,49152,,,,7.0.9466.0,
+"netmfc70deu_dll" = 3,VSS\Win32\mfc70deu.dll,,,,2002-01-05,,1031,,,,,,,,61440,,,,7.0.9466.0,
+"netmfc70esp_dll" = 3,VSS\Win32\mfc70esp.dll,,,,2002-01-05,,3082,,,,,,,,61440,,,,7.0.9466.0,
+"netmfc70fra_dll" = 3,VSS\Win32\mfc70fra.dll,,,,2002-01-05,,1036,,,,,,,,61440,,,,7.0.9466.0,
+"netmfc70ita_dll" = 3,VSS\Win32\mfc70ita.dll,,,,2002-01-05,,1040,,,,,,,,61440,,,,7.0.9466.0,
+
+[NetSetup - CRT Dlls]
+"netmsvcrt_dll" = 3,VSS\Win32\msvcr70.dll,,,,2002-01-05,,1033,,,,,,,,344064,,,,7.0.9466.0,
+
+[VSS Create DB win32]
+"ddconv_exe" = 2,VSS\Win32\ddconv.exe,,,,2003-12-22,,,OLDER,,,,,,,299008,,,,,
+"ddupd_exe" = 2,VSS\Win32\ddupd.exe,,,,2003-12-22,,,OLDER,,,,,,,421888,,,,,
+
+[VSS Client]
+"ss_exe" = 2,VSS\Win32\ss.exe,,,,2003-12-22,,,OLDER,,,,,,,397312,,,,,
+"ssexp_exe" = 2,VSS\Win32\ssexp.exe,,,,2003-12-22,,1033,OLDER,,,,,,,27648,,,,6.0.31222.0,
+
+[VSS - SSUSDLL]
+"ss_dll_enu" = 2,VSS\Win32\ssus.dll,,,,2003-12-22,,1033,OLDER,,,,,,,499712,,,,6.0.31222.0,
+
+[VSS - IntegrationWin32]
+"ssscc_dll" = 2,VSS\Win32\ssscc.dll,,,,2003-12-22,,1033,OLDER,,,,,,,1560576,,,,6.0.31222.0,
+"ssint_exe" = 2,ssint.exe,,,,2003-12-22,,1033,OLDER,,,,,,,147456,,,,6.0.31222.0,
+
+[VSS Shared C/S]
+"ssapi_dll" = 2,VSS\Win32\ssapi.dll,,,,2003-12-22,,1033,OLDER,,,,,,,569344,SYSTEM,,,6.0.31222.0,
+"ssgui_dll" = 2,VSS\Win32\ssgui.dll,,,,2003-12-22,,1033,OLDER,,,,,,,1220608,SYSTEM,,,6.0.31222.0,
+
+[VSS Admin win32]
+"analyze_exe" = 2,VSS\Win32\analyze.exe,,,,2003-12-22,,1033,OLDER,,,,,,,225280,,,,6.0.31222.0,
+"ssarc_exe" = 2,VSS\Win32\ssarc.exe,,,,2003-12-22,,1033,OLDER,,,,,,,532480,,,,6.0.31222.0,
+"ssrestor_exe" = 3,VSS\Win32\ssrestor.exe,,,,2003-12-22,,1033,OLDER,,,,,,,532480,,,,6.0.31222.0,
+"ssadmin_exe" = 3,VSS\Win32\ssadmin.exe,,,,2003-12-22,,1033,OLDER,,,,,,,19456,,,,6.0.31222.0,
+"mkss_exe" = 3,mkss.exe,,,,2003-09-15,,,OLDER,,,,,,,114688,,,,,
+"testlock_exe" = 3,testlock.exe,,,,2003-12-22,,,OLDER,,,,,,,102400,,,,,
+"unlock_exe" = 3,unlock.exe,,,,2003-12-22,,,OLDER,,,,,,,147456,,,,,
+
+[VSS Sys Files - CRT]
+"msvcr70_dll" = 3,VSS\Win32\msvcr70.dll,,,,2002-01-05,,1033,OLDER,,,,,,,344064,,,,7.0.9466.0,
+
+[VSS Sys Files - MFC]
+"mfc70_dll" = 3,VSS\Win32\mfc70.dll,,,,2002-01-05,,1033,OLDER,,,,,,,974848,SYSTEM,,,7.0.9466.0,
+"mfc70enu_dll" = 3,VSS\Win32\mfc70enu.dll,,,,2002-01-05,,1033,OLDER,,,mfc70loc.dll,!ROOT,,,57344,,,,7.0.9466.0,
+"mfc70chs_dll" = 3,VSS\Win32\mfc70chs.dll,,,,2002-01-05,,2052,OLDER,,,mfc70loc.dll,!ROOT,,,40960,,,,7.0.9466.0,
+"mfc70cht_dll" = 3,VSS\Win32\mfc70cht.dll,,,,2002-01-05,,1028,OLDER,,,mfc70loc.dll,!ROOT,,,45056,,,,7.0.9466.0,
+"mfc70jpn_dll" = 3,VSS\Win32\mfc70jpn.dll,,,,2002-01-05,,1041,OLDER,,,mfc70loc.dll,!ROOT,,,49152,,,,7.0.9466.0,
+"mfc70kor_dll" = 3,VSS\Win32\mfc70kor.dll,,,,2002-01-05,,1042,OLDER,,,mfc70loc.dll,!ROOT,,,49152,,,,7.0.9466.0,
+"mfc70deu_dll" = 3,VSS\Win32\mfc70deu.dll,,,,2002-01-05,,1031,OLDER,,,mfc70loc.dll,!ROOT,,,61440,,,,7.0.9466.0,
+"mfc70esp_dll" = 3,VSS\Win32\mfc70esp.dll,,,,2002-01-05,,3082,OLDER,,,mfc70loc.dll,!ROOT,,,61440,,,,7.0.9466.0,
+"mfc70fra_dll" = 3,VSS\Win32\mfc70fra.dll,,,,2002-01-05,,1036,OLDER,,,mfc70loc.dll,!ROOT,,,61440,,,,7.0.9466.0,
+"mfc70ita_dll" = 3,VSS\Win32\mfc70ita.dll,,,,2002-01-05,,1040,OLDER,,,mfc70loc.dll,!ROOT,,,61440,,,,7.0.9466.0,
+
+[Sys Files - Regtlib]
+"regtlib_exe" = 3,regtlib.exe,,,,2000-07-15,,,OLDER,,,,,,,30720,SYSTEM,,,,
+
+[dag ODBC CAH]
+"odbcstf_dll" = 3,Setup\odbcstf.dll,,,,2000-06-13,,1033,OLDER,,,,,,,40960,SYSTEM,,,3.510.3904.0,
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Thu Mar 11 16:11:55 2004           **
+;**                                                                **
+;*** END ************************************************************

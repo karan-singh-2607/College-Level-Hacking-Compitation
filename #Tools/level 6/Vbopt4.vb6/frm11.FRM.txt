@@ -1,0 +1,17 @@
+frmScopes
+cmd_temp
+chk_raw
+cmd_match
+ComboBox
+TextBox
+SpinButton
+ListBox1
+cmd_init
+ListBox2
+Lbl_to
+Lbl_1
+Lbl_2
+Lbl_Scope
+Lbl_SourceVars
+Lbl_ExeVars
+ 1 

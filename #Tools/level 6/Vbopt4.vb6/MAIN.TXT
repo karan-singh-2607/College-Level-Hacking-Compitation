@@ -1,0 +1,1867 @@
+Attribute VB_Name = "MAIN"
+' main.txt - global definitions
+Global Const gc0006 = "e"
+Global Const gc000A = "Error Situation VB Discompiler"
+Global Const gc000E = "For this program you'll need an upgraded VB Discompiler"
+Global Const gc0012 = "Severe errors may cause the Discompiler to crash"
+Global Const gc0016 = "Internal problems, the code created may be buggy"
+Global Const gc001A = "Do you have the latest edition of VB Discompiler?"
+Global Const gc001E = "Runtime Error in VB Discompiler"
+Global Const gc0026 = "You may send this program to DoDi to improve VB Discompiler"
+Global Const gc002A = "Error "
+Global Const gc002E = "Found unknown data structures!"
+Global Const gc0032 = "Not a Visual Basic program"
+Global Const gc0036 = " is not supported"
+Global Const gc003A = "Program does not match Project"
+Global Const Foundunknownfixups = "Found unknown fixups!"
+Global Const gc0042 = "Found duplicate patch!"
+Global Const gc0046 = "Found additive seg patch!"
+Global Const gc004A = "Error in Discompiler logic!"
+Global Const gc004E = "The program is too big for the demo version of VB Discompiler"
+Global Const gc0052 = "Missing description for "
+Global Const gc0056 = " contains unknown structure!"
+Global Const gc005A = "Found an unknown token!"
+Global Const gc005E = "Unexpected variable reference!"
+Global Const gc0062 = "Found incompatible scopes!"
+Global Const gc0066 = "Found incompatible types"
+Global Const gc006A = "Found an unknown collection!"
+Global Const gc006E = "An already known problem occured"
+Global Const gc0072 = "File not found or wrong version: "
+Global Const gc0076 = "Name too long"
+Global Const gc007A = "Program without code - abort"
+Global Const gc007E = "Visual Basic not found"
+Global Const gc0082 = "File not found"
+Global Const gc0086 = "Already done"
+Global Const gc008A = "VB Discompiler"
+Global Const gc008E = "Initializing"
+Global Const gc0092 = "Select EXE file"
+Global Const gc0096 = "Scanning forms"
+Global Const gc009A = "Scan finished"
+Global Const gc009E = "Creating project files"
+Global Const gc00A2 = "Creating declarations"
+Global Const gc00A6 = "Project created"
+Global Const gc00AA = "Open "
+Global Const gc00AE = "Loading "
+Global Const gc00B2 = "Scanning "
+Global Const gc00B6 = "Creating "
+Global Const gc00BA = "Forms"
+Global Const gc00BE = "Modules"
+Global Const gc00C2 = "Segments"
+Global Const gc00C6 = "Scopes"
+Global Const gc00CA = "Types"
+Global Const gc00CE = "Tokens"
+Global Const gc00D2 = "Fixups"
+Global Const gc00D6 = "Data"
+Global Const gc00DA = "local "
+Global Const gc00DE = "global "
+Global Const gc00E2 = "Subroutine calls"
+Global Const gc00E6 = "Declarations in "
+Global Const gc00EA = "Error module offset"
+Global Const gc00EE = "Rename"
+Global Const gc00F2 = "Startform not found"
+Global Const gc00F6 = "No more errors"
+Global Const gc00FA = "Specify type!"
+Global Const gc00FE = "Unknown type"
+Global Const gc0102 = "Unexpected EXE fixup"
+Global Const gc0106 = "Token uses no variable"
+Global Const gc010A = "Show Variable"
+
+Global gv011A As Integer
+Global Const gc011C = 1 ' &H1%
+Global Const gc011E = 2 ' &H2%
+Global gv0120&
+Global gv0124
+Global gv0128
+Global gv0130
+Global gv0138 As String
+Global gv013C As Integer
+Global gv013E As Integer
+Global gv0140 As Integer
+Global gv0142 As Integer
+Global gv0144 As Long
+Global gVAModuleEnd As Long
+Global gv014C As Integer
+Global gv014E As Integer
+Global gv0150 As Integer
+Type T34E9
+  M34F5 As Integer
+  M34FD As Integer
+  M3503 As Integer
+  NameSize(1 To 5) As Integer
+End Type
+
+Type T3511
+  M351B As Long
+  M3520 As Long
+End Type
+
+Global g_AppPath As String
+Global gVBversion As Integer
+Global gv01B4 As Integer
+Type T3581
+  ResObjName As Integer
+  M3595 As Integer
+End Type
+
+Global Const ResID_CURSOR = 1 ' &H1%
+Global Const ResID_BITMAP = 2 ' &H2%
+Global Const ResID_ICON = 3 ' &H3%
+Global Const ResID_MENU = 4 ' &H4%
+Global Const ResID_DIALOG = 5 ' &H5%
+Global Const ResID_STRING = 6 ' &H6%
+Global Const ResID_FONTDIR = 7 ' &H7%
+Global Const ResID_FONT = 8 ' &H8%
+Global Const ResID_ACCELERATOR = 9 ' &H9%
+Global Const ResID_RCDATA = 10 ' &HA%
+Global Const ResID_GROUP_CURSOR = 12 ' &HC%
+Global Const ResID_GROUP_ICON = 14 ' &HE%
+Global Const ResID_NAMETABLE = 15 ' &HF%
+Global Const ResID_VERSIONINFO = 16 ' &H10%
+Global Const gc01EC = 17 ' &H11%
+Global Const gc01EE = 18 ' &H12%
+Global Const gc01F0 = 16 ' &H10%
+Global Const gc01F2 = 18 ' &H12%
+Global g_ResObjs() As T3581
+Global g_ResTypeLibPos As Integer
+Type T36A7
+  M36B3_count As Integer
+  M36BA As Integer
+  StringBuffOffs As Integer
+  M36C8 As Integer
+  RAW_Offset As Long
+  Size As Long
+  Count As Integer
+End Type
+
+Global gv026C() As T36A7
+Global gv029E As Integer
+Global gv02A2 As T36A7
+Global gv02B4 As Integer
+Global gv02B6 As Integer
+Global g_FileExeOffset As Long
+Global gv02C0 As Long
+Global Const gc02C4 = "4.11"
+Global g_IsDemoVersion As Integer
+Global LicEnableLiteFeatures As Integer
+Global LicEnableProFeatures As Integer
+Global g_MainForm As Form
+Global gv02D6 As Control
+Global g_WorkFrm As Form
+Global gFontSize As Double
+Global gFontBold As Integer
+Global gMarkerFontSet As Integer
+Global gv02EC_MAKName As String
+Global g_ExeFilePath As String
+Global gProjectDirPath As String
+Global gExeNameOnly As String
+Global gVACmdEnd As Long
+Global gv0300 As Long
+Global gModuleVACur As Long
+Type T37FC
+  Next As Integer
+  Name As Integer
+  M3818 As Integer
+End Type
+
+Global gDatArr1() As T37FC
+Global gDatArrSize As Integer
+Global gDatArrLinks() As Integer
+Global gDatArr2() As String
+Global gv03C4() As Integer
+Global gDatStrings2 As String
+Global gDatStrings1 As String
+Type T3870
+  M3820 As Integer
+  Count As Integer
+End Type
+
+Type T387F
+  Size As Integer
+  M388F As Integer
+  M3897 As Integer
+  M184C As Integer
+End Type
+
+Type T389F
+  hFile As Integer
+  M36B3_count As Integer
+End Type
+
+Global gv0456 As Long
+Global gv045A As Integer
+Global gv045C As Integer
+Global gv045E As Integer
+Global gv0460 As Integer
+Global gv0462 As Long
+Global gv0466 As Integer
+Global gv0468 As Integer
+Global gv0474 As Integer
+Global gFileName_dat As String
+Global Const gc047A = 1 ' &H1%
+Global Const gc047C = 2 ' &H2%
+Global Const gc047E = 4 ' &H4%
+Global Const gc0480 = 8 ' &H8%
+Global Const gc0482 = 16 ' &H10%
+Global Const gc0484 = 32 ' &H20%
+Global Const gc0486 = 64 ' &H40%
+Global Const gc0488 = 128 ' &H80%
+Global Const gc048A = 256 ' &H100%
+Global Const gc048C = 512 ' &H200%
+Global Const gc048E = 1024 ' &H400%
+Global Const gc0490 = 2048 ' &H800%
+Global Const gc0492 = 4096 ' &H1000%
+Global Const gc0494 = 8192 ' &H2000%
+Global Const gc0496 = 16384 ' &H4000%
+Global Const gc0498 = -32768 ' &H8000%
+Global Const gc04A2 = 1 ' &H1%
+Global Const gc04A4 = 2 ' &H2%
+Global Const gc04A6 = 4 ' &H4%
+Global Const gc04A8 = 8 ' &H8%
+Global Const gc04AA = 16 ' &H10%
+Type T3AD0
+  M3ADA As Integer
+  M3AE2 As Integer
+  Name As String
+End Type
+
+Global gv04D6() As T3AD0
+Global gv0508 As Integer
+Global gv050A() As Integer
+Global gv053C As Integer
+Type NE_HeaderStruct
+  Signature As Integer
+  LinkerVer As Integer
+  ENTRYTABLE As Integer
+  M3B41 As Integer
+  CRC32 As Long
+  Flags As Integer
+  DataSegmentNumber As Integer
+  Initial_heap As Integer
+  Initial_stack As Integer
+  Initial_IP As Integer
+  Initial_CS As Integer
+  
+  Initial_SP As Integer
+  Initial_SS As Integer
+  
+  SegmentTableEntryCount As Integer
+  ModuleTableEntryCount As Integer
+  M3BB8 As Integer
+  SegmentTableOffset As Integer
+  RESOURCETABLE As Integer
+  ResidentNameTable As Integer
+  ModuleReferenceTable As Integer
+  IMPORTTABLE As Integer
+  NonResidentNameTable As Long
+  M3BF4 As Integer
+  MiscFlags As Integer
+  M3C09 As Integer
+  M3C16 As Integer
+  M3C22 As Integer
+  M3C2B As Integer
+  Reserved As Integer
+  M3C3D As Integer
+End Type
+
+Global gNE_Header As NE_HeaderStruct
+Type T3C54
+  Flags As Integer
+  M3C63 As Integer
+  hFile As Integer
+  subRef_M3C6A As Integer
+End Type
+
+Global gv06A2() As T3C54
+Global gv06D4 As Integer
+Global hFile_Out As Integer
+Global Listbox_File_Out As ListBox
+Global gVAToRaw&
+Global gVANegOffsetCurMod&
+Global gDisOutputTxt As String
+Global gv06EA As Integer
+Global gSingleChar As String * 1
+Type T3CC4
+  M3CCD As String * 1
+  NameSize As Integer
+End Type
+
+Global gFormMainStruc As T3CC4
+Type T3CD8
+  M3CE1 As String * 2
+End Type
+
+Type T3CE6
+  NameSize As Integer
+End Type
+
+Global gv0734 As T3CD8
+Global gv0738 As T3CE6
+Type T3CFB
+  M3CE1 As String * 4
+End Type
+
+Type T3D04
+  M3D0D As Long
+End Type
+
+Type T3D12
+  M3D1B As Single
+End Type
+
+Type T3D20
+  M3520 As Integer
+  M3D29 As Integer
+End Type
+
+Global gv0786 As T3CFB
+Global gv078C As T3D04
+Global gv0798 As T3D12
+Type T3D47
+  M3CE1 As String * 8
+End Type
+
+Type T3D50
+  M3D1B As Double
+End Type
+
+Type T3D59
+  M3D62 As Currency
+End Type
+
+Global gv07DA As T3D50
+Global gv07E4 As T3D59
+Type T3D79
+  M3D85 As Variant
+  M3D8A As Integer
+  M3D92 As Integer
+  M0917 As String * 8
+  M3D9B As String * 10
+  M3DA3 As Integer
+  M3DAB As Integer
+  M3DB2 As Integer
+  M3DB9 As Integer
+  M3DC0 As Integer
+  M3DC7 As Integer
+End Type
+
+Global gv085A As T3D79
+Global Const VbMsgBoxStyle_vbCritical = 16 ' &H10%
+Type T3EFF
+  M3F0B As String
+  M36B3_count As Integer
+  M3F13 As Integer
+  M3F1B As Integer
+  M3F23 As String
+  M3F30 As Integer
+  M3F3B As Integer
+  M3F46 As Integer
+  M3F51 As Integer
+  M3F5B As Integer
+  M3F67 As Integer
+  M3F73 As Integer
+  M3F7F As Integer
+  M3F8A As Integer
+  M3F96 As Integer
+  M3FA2 As Integer
+End Type
+
+Global gv094A() As T3EFF
+Global gv097C As Integer
+Global gv097E As Integer
+Global gv0980 As Integer
+Global gv0982 As Integer
+Global gv0984 As Integer
+Global gv0988 As String * 255
+Global gv0A88 As Integer
+Global gv0A8A As Integer
+Type T402F
+  M403B As Integer
+  Flags As Integer
+  Name As String
+  M4045 As Long
+  M404D As Integer
+  M4054 As Long
+End Type
+
+Global gv0AD6() As T402F
+Global gv0B08 As Integer
+Global gv0B0A As Integer
+Global gv0B0C As Integer
+Global gv0B1C As Integer
+Type T40FB
+  Name As String
+  M4106 As Long
+End Type
+
+Type T4B14
+  M34FD As Integer
+  M3CF5 As Integer
+  M4B20 As Integer
+  M3D3B As Integer
+  M4B26 As String * 8
+End Type
+
+Type T4938
+  M3CE1 As String * 16
+End Type
+
+Global gv0B84 As T4938
+Type T4B33
+  M4B42 As String
+  M4B4B As Integer
+  M3DC7 As Integer
+  M4B56 As Integer
+  ResObjName As T4938
+  M4B5E As Integer
+  M4B68 As Integer
+  M4B72 As Integer
+  M4B7C As Integer
+  M4B85 As Integer
+  M4B8E As Integer
+  M4B97 As Integer
+End Type
+
+Type T4BA0
+  StringBuffOffs As Integer
+  subRef_M3C6A As Integer
+End Type
+
+Type T4BAA
+  StringBuffOffs As Integer
+  Count As Integer
+  M4B56 As Integer
+  ResObjName As T4938
+  M4B5E As Integer
+  M4B68 As Integer
+  M4B72 As Integer
+  M4B7C As Integer
+  M4B85 As Integer
+  M3F0B As Integer
+End Type
+
+Global gClassNamesPos() As T4BAA
+Global gClassNamesCount As Integer
+Global gClassNamesStr$
+Global gv0CAE() As String
+Global gv0CE0 As Integer
+Global Const gc0CE8 = 3 ' &H3%
+Global Const gc0CEA = 4 ' &H4%
+Global Const gc0CEC = 5 ' &H5%
+Global Const gc0CF0 = 1 ' &H1%
+Global Const gc0CF2 = 2 ' &H2%
+Type T4C74
+  ModuleIndex As Integer
+  M4C81 As Integer
+  M36B3_count As Integer
+  Flags As Long
+  M3F23 As String
+  M41AD As Integer
+  M41B7 As Integer
+End Type
+
+Global gv0D3E() As T4C74
+Global gv0D70 As Integer
+Global g_IsNE As Integer
+Global gIsVB_Ver As Integer
+Global gEntryPoint_Page As Integer
+Type MZ_Header
+  Signature As Integer
+  M4CCD As Integer
+  M4CD6 As Integer
+  M4CDF As Integer
+  M4CE9 As Integer
+  M4CF4 As Integer
+  M4CFF As Integer
+  M4D0A As Integer
+  M4D14 As Integer
+  CRC32 As Integer
+  Initial_IP As Integer
+  Initial_CS As Integer
+  reloc As Integer
+  overlay As Integer
+  M4D32(15) As Integer
+  OffsetToPE As Long
+End Type
+
+Global CommandlineMode%
+
+Global gTwoByteBuff As String * 2
+'Global Const "??" = "??"
+'Global Const "MZ" = "MZ"
+'Global Const "NE" = "NE"
+Global Const gc0E20 = "LE"
+'Global Const "PE" = "PE"
+Global G_FullExeFileName As String
+Global gv_ExeFilePath As String
+Global gv_ExeFileName
+Global gExeFileNameOnly2 As String
+Global g_hFileExe As Integer
+Global gMZ_Header As MZ_Header
+Type T4DBE
+  DllName As String
+  ImageBase As Long
+  VOffset As Long
+End Type
+
+Global gImportDlls() As T4DBE
+Global gImportDLLCount As Integer
+Type T4E01
+  Name As String
+  Offset As Long
+  VOffset As Long
+  Size As Long
+  M36B3_count As Integer
+  Level_M4E13 As Integer
+  Count As Integer
+End Type
+
+Global gEntrys() As T4E01
+Global gEntryCounter As Integer
+Global Const gcStub_Type = 1 ' &H1%
+Type T4F82
+  VOffset As Long
+  Raw_Size As Long
+  RAW_Offset As Long
+  Name As String
+End Type
+
+Global gPESections3() As T4F82
+Global gPECurSection As Integer
+Type T4FAD
+  RAW_Offset As Long
+  Raw_Size As Long
+  VA_Offset As Long
+  Flags As Integer
+End Type
+
+Global gSectionsForVB() As T4FAD
+Global gSegCount As Integer
+Global gv1056 As Long
+Global gv105A As Long
+Global gVAToRaw2 As Long
+Global gv1062 As Long
+Global gv1066 As Long
+Global gv106A As Integer
+Type T5042
+  Flags As String * 1
+  M504F As Integer
+End Type
+
+Type T5057
+  Flags As String * 1
+  M5064 As Integer
+  M506D As String * 1
+  M504F As Integer
+End Type
+
+Type SegmTblEntrStruc
+  SegOffset As Integer
+  Size As Integer
+  Flags As Integer
+  M50B6 As Integer
+End Type
+
+Type T50C2
+  Name As String
+  M4C81 As Integer
+End Type
+
+Type T50CD
+  lOffsetSym_M3C6A As String * 1
+  M50D9 As String * 1
+  hFile As Integer
+  M50E1 As Integer
+  M50E7 As Integer
+End Type
+
+Type T50ED
+  hFile As Integer
+  M50F7 As Integer
+  M50D9 As Integer
+  M50E1 As Integer
+  M50E7 As Integer
+End Type
+
+Global Const gc1164 = 2 ' &H2%
+Global Const gc1166 = 3 ' &H3%
+Global Const gc1168 = 5 ' &H5%
+Global gPESect_Text_VStart As Long
+Global gPESect_Text_VEnd As Long
+Global gPESect_Text_VToRaw As Long
+Type PE_HeaderCoff
+  PE_Signature As String * 2
+  Machine As Integer
+  MachineT As Integer
+  NumSections As Integer
+  TimeDateStamp As Long
+  M5183 As Long
+  M518B As Long
+  OptionalHeaderSize As Integer
+  Characteristics As Integer
+End Type
+
+Type PE_Hdr_Version
+  M3D29 As Integer
+  M3520 As Integer
+End Type
+
+Type PE_OptHdr
+  Characteristics As Integer
+  Magic As Integer
+  M51D0 As Long
+  M51DC As Long
+  M51E8 As Long
+  AddressOfEntryPoint As Long
+  BaseOfCode As Long
+  BaseOfData As Long
+  ImageBase As Long
+  SectionAlignment As Long
+  FileAlignment As Long
+  OperatingSystemVersion As PE_Hdr_Version
+  ImageVersion As PE_Hdr_Version
+  SubsystemVersion As PE_Hdr_Version
+  Win32VersionValue As Long
+  SizeOfImage As Long
+  SizeOfHeaders As Long
+  CRC32 As Long
+  M5265 As Integer
+  M526F As Integer
+  M527A As Long
+  M5283 As Long
+  M528C As Long
+  M5297 As Long
+  Flags As Long
+  M4FA5 As Long
+End Type
+
+Type T52A2
+  RVA_Offset As Long
+  Size As Long
+End Type
+
+Global gPE_HeaderCoff As PE_HeaderCoff
+Global gPE_OptHdr As PE_OptHdr
+Global gPE_Dir(16) As T52A2
+Global Const gcExports = 1 ' &H1%
+Global Const gcImports = 2 ' &H2%
+Global Const gcResource = 3 ' &H3%
+Global Const gcRelocation = 6 ' &H6%
+Global Const gcDebug = 7 ' &H7%
+Type T5316
+  Name As String * 8
+  VSize As Long
+  RVA_Offset As Long
+  Raw_Size As Long
+  RAW_Offset As Long
+  Relocs As Long
+  M5336 As Long
+  M4CDF As Integer
+  M5340 As Integer
+  Flags As Long
+End Type
+
+Global gPESections() As T5316
+Global gPESectionCount As Integer
+Type ImportDirectoryTableStruc
+  OriginalFirstThunk As Long
+  TimeDateStamp As Long
+  ForwarderChain As Long
+  DllName As Long
+  FirstThunk As Long
+End Type
+
+Type ExportTableStruct
+  Flags As Long
+  TimeDateStamp As Long
+  MajorVersion As Integer
+  MinorVersion As Integer
+  DllName As Long
+  Base As Long
+  NumberOfFunctions As Long
+  NumberOfNames As Long
+  Addrs As Long
+  Names As Long
+  Ordinals As Long
+End Type
+
+Type T53F5
+  StringBuffOffs As Integer
+  RVA_Offset As Long
+End Type
+
+Type T5402
+  M5410 As Integer
+  RVA_Offset As Long
+  Name As String
+End Type
+
+Type T541B
+  Flags As Long
+  TimeDateStamp As Long
+  MajorVersion As Integer
+  MinorVersion As Integer
+  M36B3_count As Long
+  Size As Long
+  RVA_Offset As Long
+  RAW_Offset As Long
+End Type
+
+Type T5427
+  Flags As Long
+  TimeDateStamp As Long
+  MajorVersion As Integer
+  MinorVersion As Integer
+  M5437 As Integer
+  M5410 As Integer
+End Type
+
+Type T5440
+  M544E As Long
+  M5459 As Long
+End Type
+
+Type T5465
+  RVA_Offset As Long
+  Size As Long
+  M5475 As Long
+  M5481 As Long
+End Type
+
+Global gv1598 As Long
+Global gv159C As Long
+Type T549F
+  VOffset As Long
+  lOffsetSym_M3C6A As Integer
+End Type
+
+Type T54AE
+  VOffset As Long
+  M36B3_count As Integer
+  subRef_M3C6A As Integer
+  Count As Integer
+  M54BB As Integer
+End Type
+
+Global gv15E8() As Integer
+Global gv161C() As T54AE
+Global gv164E As Integer
+Type T54E0
+  M36B3_count As Integer
+  M54E9 As Integer
+  Reserved As Long
+End Type
+
+Type T54F0
+  hFile As Integer
+  M54F9 As Integer
+  Flags As Integer
+  ResObjName As Integer
+  Reserved As Long
+End Type
+
+Global gv16A0 As Integer
+Global Const gc16A2 = 1 ' &H1%
+Global Const gc16A4 = 2 ' &H2%
+Global Const gc16A6 = 3 ' &H3%
+Global Const gc16A8 = 4 ' &H4%
+Global Const gc16AA = 5 ' &H5%
+Global Const gc16AC = 8 ' &H8%
+Global Const gc16AE = 9 ' &H9%
+Global gv16B0 As Integer
+Global gv16B2 As Integer
+Global gv16B4 As Integer
+Global gv16B6 As Integer
+Global gv16B8 As Integer
+Global gv16BA As Integer
+Global gv16BC As Integer
+Global gv16BE As Long
+Global gv16C2 As Long
+Global gDataSize As Integer
+Global gDataVersion As Integer
+Global gFilename As String
+Global gVAFileName As Integer
+Type T5628
+  Ver As Integer
+  DataVer As Integer
+  Entries As Integer
+  Size As Long
+End Type
+
+Type T565C
+  CurEntries As Long
+  Size As Long
+  M54BB As Integer
+  Count As Integer
+End Type
+
+Type T56DF
+  hFile As Integer
+  M4C81 As Integer
+End Type
+
+Type T56EC
+  VOffset As Long
+  M4C81 As Integer
+End Type
+
+Type T56F7
+  VOffset As Long
+  M36B3_count As Integer
+  M4C81 As Integer
+  Count As Integer
+End Type
+
+Type TBuggy
+  VOffset As Long
+  M4C81 As Integer
+  M36B3_count As Integer
+  M5718 As Integer
+  Next_M5721 As Integer
+  M572A As Integer
+End Type
+
+Type T5734
+  VOffset As Long
+  M36B3_count As Integer
+  M5742 As Integer
+  M574B As String
+  M5755 As Integer
+  M575E As Integer
+End Type
+
+Global gBuggy() As TBuggy
+Global gvArrSize As Integer
+Global gMetaCodeLines() As T5734
+Global gMetaCodeLinesCount As Integer
+Global Const gc185C = 1 ' &H1%
+Global Const gc185E = 2 ' &H2%
+Global Const gc1860 = 3 ' &H3%
+Global Const gc1864 = 4 ' &H4%
+Global Const gc1866 = 6 ' &H6%
+Global Const gc1868 = 6 ' &H6%
+Global Const gc186A = 7 ' &H7%
+Global Const gc186C = 8 ' &H8%
+Global Const gc1870 = 16 ' &H10%
+Global Const gc1874 = 35 ' &H23%
+Global Const gc1876 = 33 ' &H21%
+Global Const gc1878 = 51 ' &H33%
+Global Const gc187A = 49 ' &H31%
+Global Const gc187C = 64 ' &H40%
+Global Const gc187E = 16384 ' &H4000%
+Global Const gc1880 = 8192 ' &H2000%
+Global Const gc1882 = 4096 ' &H1000%
+Global gIsVB5 As Integer
+Type T588E
+  M3F13 As Integer
+  M589B As Integer
+  M58A6 As Integer
+  M58B2 As Integer
+  M58BF As Integer
+End Type
+
+Type T58CA
+  M3738 As String * 4
+  M32DA As Integer
+  M58D6 As Integer
+  M32F4 As Long
+  M32FA As Long
+  M3300 As Long
+  M58DD As Long
+  M58E4 As Long
+  M58EA As Long
+  M4243 As Integer
+  M3D3B As Integer
+  M3377 As Long
+  M330E As Long
+  M3315 As Long
+  M331C As Long
+  M3325(1 To 4) As Integer
+  M58F0 As Long
+  M58F7 As Long
+  MFormsCount As Long
+  M58FE As Long
+  M5905 As Long
+  M590F As Long
+  M591A As Long
+  M5922 As Long
+  M592E As Long
+  M5938 As Long
+  M5941 As Long
+End Type
+
+Type T594D
+  M5959 As Long
+  M5961 As Long
+  M3300 As Long
+  M596A As Long
+  M5978 As Long
+  M5984 As Long
+  M598A As Long
+  M5993 As Long
+  M599E As Long
+  M59A8 As Integer
+  M59B0 As Integer
+  M59B7 As Integer
+  M59BE(16) As Integer
+  M59C9 As Long
+  M59D1 As Long
+  M59D9 As Long
+  M59E3 As Long
+End Type
+
+Type T59F0
+  M59FC As Long
+  M41AD As T4938
+  M41B7 As T4938
+  M5A03 As Long
+  M3D35 As Long
+  M5A0C As Long
+  M41CD As T4938
+  M5984 As Long
+  M5A12 As Long
+  M5A18 As Long
+  M5A23 As Integer
+  M5A2C As Integer
+End Type
+
+Type T5A33
+  M5A42 As Long
+  M5A4B As Long
+  M5A51 As Long
+  M5A58 As Long
+  M5A60 As Long
+  M5A68 As Long
+  M5A71 As Long
+  M5A7D As Long
+  M5A86 As Long
+  M5A91 As Long
+  Flags As Long
+  M5A9A As Long
+End Type
+
+Type T5AAE
+  M34FD As Integer
+  M5ABD As Integer
+  M5AC6 As Long
+  M3300 As Long
+  M5AD2 As Long
+  M5ADC As Long
+  M58EA As Long
+  M5AE2 As Long
+  M598A As Long
+  M5AEB As Long
+  M5AF5 As Long
+  M5AFC As Integer
+  M5B05 As Integer
+  M5B0C As Long
+  M5B13 As Long
+  M5B1A As Long
+End Type
+
+Type T5B23
+  M5A9A As Long
+  M5B37 As Long
+  M5B40 As Long
+  M5B47 As Long
+  M5B51 As Long
+  M5B58 As Long
+  M5B61 As Long
+  M5B68 As Long
+  M5B73 As Long
+  M5B7C As Long
+  M5B86 As Integer
+  M5B90 As Integer
+  M424A As Integer
+  M4251 As Integer
+  M5B97 As Long
+  M5BA1 As Long
+End Type
+
+Type T5BAB
+  M5BBC As Long
+  M5A42 As Long
+  M5A4B As Long
+  M3300 As Long
+  M5BC2 As Long
+  M5A0C As Long
+  M5BC8 As Long
+  M332B As Long
+  M5BD0 As Long
+  M5BDC As Long
+  M5BE2 As Long
+  M5BEA As Long
+  M5B0C As Long
+  M5BF1 As Long
+  M5B40 As Long
+  M5BF8 As Long
+End Type
+
+Type T5BFF
+  M5C0C As Long
+  M32F4 As Long
+  M32FA As Long
+  M5C15 As Integer
+  ResObjName As Integer
+  M5C1E As Integer
+  M5C27 As Integer
+  hFile As Long
+  M36B3_count As Long
+End Type
+
+Type T5C30
+  M5C3E As Integer
+  M5C44 As Integer
+  M5C4B As Integer
+  M5C52 As Integer
+  M5C59 As Integer
+  M5C60 As Integer
+  M5C67 As Integer
+  M5C6D As Integer
+  M5C73 As Long
+  M5C7E As Long
+  M5C84 As Long
+  M5C8A As Long
+  M5C90 As Integer
+  M5C98 As Integer
+End Type
+
+Type T5CA0
+  M5CAF As Integer
+  M5CB6 As Integer
+  M5CBD As Long
+  M5B37 As Long
+  M4243 As Integer
+  M5CC4 As Integer
+  M5BC2 As Long
+  M58E4 As Long
+  M5CCB As Long
+  M5CD6 As Integer
+  M5CDE As Integer
+  M5CE5 As Long
+  M5CF3 As Integer
+  M5CFB As Integer
+End Type
+
+Type T5D03
+  M5D10 As Long
+  M5D16 As Long
+  M5A42 As Long
+  M5D23(1 To 3) As Long
+End Type
+
+Type T5D2D
+  M5D39 As Long
+  M5941 As Long
+  M5D3F As Long
+  M5938 As Long
+  M5D4B As T4938
+  M5D54 As Long
+  M5D5A As Long
+  M5D60 As Long
+  M5D67 As Long
+End Type
+
+Type T5D6E
+  M5D10 As Long
+  M598A As Long
+  M5D7B As Long
+  M5D86 As Long
+  M5BC2 As Long
+  M5D8C As Long
+  M5D92 As T4938
+  M5D9A As Integer
+  M5DA0 As Integer
+  M5DA7 As Integer
+  ModuleTableEntryCount As Integer
+  M5DAD As Long
+  M5BEA As Long
+  M5B0C As Long
+  M5BF1 As Long
+  M5DB6 As Long
+  M3377 As Long
+  M3306 As Long
+  M58FE As Long
+  M5DC2 As Long
+End Type
+
+Type T5DC9
+  ResObjName As Long
+  VOffset As Long
+End Type
+
+Type T5DD5
+  M5B37 As Long
+  M598A As Long
+End Type
+
+Type T5DE3
+  M5DF5 As Long
+  M5E01 As Long
+  M3D0D As Long
+  M598A As Long
+End Type
+
+Type T5E0D
+  M5D10 As Long
+  M5AC6 As Long
+  M5A4B As Long
+  M3300 As Long
+  M5905 As Long
+  M58E4 As Long
+  M5E18 As Long
+  M58EA As Long
+  M5E24 As Long
+  M5E2A As Long
+End Type
+
+Type T5E30
+  M5E3E As Long
+  M5B37 As Long
+  M598A As Long
+End Type
+
+Type T5E49
+  M5B37 As Long
+  M32F4 As Long
+  M5E54 As Long
+  M5E5B As Long
+  M5E62 As Long
+  M5E6A As Long
+  M598A As Long
+  M332B As Long
+  M5E2A As Long
+  M5D5A As Long
+End Type
+
+Type T5E71
+  M5E7D As Long
+  M5E83 As Integer
+  M5E8D As Integer
+  M5E97 As Integer
+  M3D3B As Integer
+  M3300 As Long
+  M5BC2 As Long
+  M58E4 As Long
+  M5EA0 As Long
+  M332B As Long
+  M5E2A As Long
+  M5EA6 As Long
+End Type
+
+Type T5EAD
+  M5EBD As Integer
+  M5EC8 As Integer
+  M3CF5 As Integer
+  Entries As Integer
+  Flags As Long
+End Type
+
+Global gv20E4 As T5EAD
+Global Lic_Name As String
+Global gLic_VerType As String
+Global gv20F8 As Integer
+Global gv20FA_Problem
+Global gModulPageSize
+Global gv2102
+Type T5F3F
+  Offset As Long
+  M36B3_count As Integer
+  subRef_M3C6A As Integer
+  M54BB As Integer
+  Count As Integer
+End Type
+
+Global gReloc_Arr() As T5F3F
+Global gReloc_ArrCount As Integer
+Global gImageBase1 As Long
+Global gImageBase2 As Long
+Global gVOffset1 As Long
+Global gModStartVA As Long
+Global gModEndVA As Long
+Type T5F89
+  Name As String
+  lOffsetSym_M3C6A As Integer
+  TypeCode_M5F96 As Integer
+End Type
+
+Global gEXEdef_Arr4_imports() As T5F89
+Global gEXEdef_Arr4_importsCount As Integer
+Global gv21E2 As Integer
+Global gv21E4 As Integer
+Global gv21E6() As Integer
+Type T5FD0
+  ResObjName As Integer
+  Name As Integer
+  M4B7C As Integer
+  M4B85 As Integer
+  M4B8E As Integer
+  M4B97 As Integer
+End Type
+
+Global gFrmClass_Arr() As T5FD0
+Global gFrmProp_Size1 As Integer
+Global gFrmClass_Str As String
+Type T5FEF
+  M36B3_count As Integer
+  Name As Integer
+  Flags As Integer
+  M5FFD As Long
+End Type
+
+Global gFrmProp_Arr3() As T5FEF
+Global gFrmProp_Size3 As Integer
+Global gFrmProp_Str2 As String
+Global Const gc22EC = 256 ' &H100%
+Type T6036
+  Name As Integer
+  M388F As Integer
+End Type
+
+Global gFrmProp_Arr4() As T6036
+Global gFrmProp_Size4
+Global gv233E As String
+Global gv2342 As String
+Type T6063
+  M36B3_count As Long
+  M606F As String * 1
+  M5D4B As T4938
+  M6077 As T4938
+  M6080 As T4938
+  M6089 As T4938
+  M6092 As T4938
+  M5BBC As Long
+  M609B As Long
+End Type
+
+Type T60A3
+  M36B3_count As Long
+  M606F As String * 1
+  M609B As Long
+End Type
+
+Type T60AE
+  M60B9 As Long
+End Type
+
+Global Const gc23CA = 8 ' &H8%
+Global Const gc23CC = 16 ' &H10%
+Global Const gc23CE = 24 ' &H18%
+Global Const gc23D0 = 32 ' &H20%
+Global Const gc23D2 = 40 ' &H28%
+Global Const gc23D4 = 48 ' &H30%
+Global Const gc23D6 = 56 ' &H38%
+Global Const gc23D8 = 64 ' &H40%
+Global Const gc23DA = 72 ' &H48%
+Global gv23E0(103) As String
+Global gv23F6(12) As Integer
+Global gv240C(7) As Integer
+Global gv2422(12) As String
+Global Const gc2442 = 21 ' &H15%
+Global Const gc245C = 72 ' &H48%
+Global Const gc245E = 73 ' &H49%
+Global Const gc2460 = 74 ' &H4A%
+Global Const gc2462 = 75 ' &H4B%
+Global Const gc2464 = 76 ' &H4C%
+Global Const gc2466 = 77 ' &H4D%
+Global Const gc2468 = 78 ' &H4E%
+Global Const gc246A = 79 ' &H4F%
+Global Const gc246C = 80 ' &H50%
+Global Const gc246E = 81 ' &H51%
+Global Const gc2470 = 82 ' &H52%
+Global Const gc2472 = 83 ' &H53%
+Global Const gc2476 = 128 ' &H80%
+Global Const gc2478 = 1 ' &H1%
+Global Const gc247A = 2 ' &H2%
+Global Const gc247E = 4 ' &H4%
+Global Const gc2482 = 6 ' &H6%
+Global Const gc2484 = 7 ' &H7%
+Global Const gc2486 = 8 ' &H8%
+Global Const gc248A = 9 ' &H9%
+Global Const gc248C = 10 ' &HA%
+Global Const gc248E = 11 ' &HB%
+Global Const gc2490 = 15 ' &HF%
+Global Const gc2492 = 16 ' &H10%
+Global Const gc2494 = 17 ' &H11%
+Global gv24A4 As Integer
+Global gv24A6 As Integer
+Global gv24A8 As Integer
+Type T63DC
+  M63E9 As Integer
+  TypeCode_M5F96 As Integer
+  Size As Integer
+End Type
+
+Type T63F1
+  M63E9 As Integer
+  TypeCode_M5F96 As Integer
+  Size As Integer
+  subRef_M3C6A As Integer
+  M3C63 As Integer
+  M4106 As Long
+  VA_Offset As Integer
+  M63FF As Integer
+End Type
+
+Type T6407
+  M6414 As Integer
+  M641D As Integer
+  M6426 As Integer
+  M642E As Integer
+  M6438 As Integer
+  M6441(1 To 3) As T63DC
+  M6448 As Integer
+  M6452 As Integer
+End Type
+
+Global Const gc256A = 1 ' &H1%
+Global Const gc256C = 2 ' &H2%
+Global Const gc256E = 3 ' &H3%
+Global Const gc2570 = 4 ' &H4%
+Global Const gc2572 = 5 ' &H5%
+Global Const gc2574 = 6 ' &H6%
+Global Const gc2576 = 7 ' &H7%
+Global Const gc2578 = 8 ' &H8%
+Global Const gc257A = 9 ' &H9%
+Global Const gc257C = 10 ' &HA%
+Global Const gc257E = 1 ' &H1%
+Global Const gc2580 = 2 ' &H2%
+Global Const gc2582 = 3 ' &H3%
+Global Const gc2584 = 4 ' &H4%
+Global Const gc2586 = 5 ' &H5%
+Global Const gc2588 = 6 ' &H6%
+Global Const gc258A = 7 ' &H7%
+Global Const gc258C = 8 ' &H8%
+Global Const gc258E = 9 ' &H9%
+Global Const gc2590 = 10 ' &HA%
+Global Const gc2592 = 11 ' &HB%
+Global Const gc2594 = 1 ' &H1%
+Global Const gc2596 = 2 ' &H2%
+Global Const gc2598 = 4 ' &H4%
+Global Const gc259A = 8 ' &H8%
+Global Const gc259E = 32 ' &H20%
+Global Const gc25A0 = 64 ' &H40%
+Global Const gc25A2 = 128 ' &H80%
+Global gCmdByteArr() As T6407
+Global gv25D8 As Integer
+Global gCmdByteStruc As T6407
+Type T65E2
+  M65EC As Integer
+  M65F7 As Integer
+  M6603 As Integer
+  M660E As Integer
+  M6616 As Integer
+  M661F As Integer
+  M6627 As Integer
+  M6632 As Integer
+  M663A As Integer
+  M6643 As Integer
+  M664D As Integer
+  M6656 As Long
+  subRef_M3C6A As Integer
+  M6441(1 To 3) As T63F1
+End Type
+
+Global gAsmNew As T65E2
+Global gAsmOld As T65E2
+Global gv272C As Integer
+Global gv2730() As String
+Type T410D
+  Name_M411A As String
+  M3F23 As String
+  M36B3_count As Integer
+  M3F1B As Integer
+  M3F13 As Integer
+  M4126 As Long
+  M4131 As Integer
+  Size As Long
+  gbls_sorted As Long
+  M4150 As Long
+  M415B As Integer
+  statSize As Integer
+  M416F As Long
+  M4178 As Long
+  M4184 As Integer
+  M4190 As Integer
+  M4198 As Integer
+  M41A1 As Integer
+  M41AD As Integer
+  M41B7 As Integer
+  M41C1 As Integer
+  M41CD As Integer
+  M41D7 As Integer
+  M41E0 As Integer
+  M41E8 As Integer
+  M41F0 As Integer
+End Type
+
+Global g_decl_objs() As T410D
+Global gEXEdef1 As Integer
+Global g_decl_num As Integer
+Global gFormsCount As Integer
+Global gEXEdef2 As Integer
+Type T4235
+  M3F1B As Integer
+  M3F13 As Integer
+  M4243 As Integer
+  M424A As Integer
+  M4251 As Integer
+  M3CF5 As Integer
+End Type
+
+Global gv28BA() As Integer
+Type T4263
+  lOffsetSym_M3C6A As Integer
+  M36B3_count As Integer
+  M4277 As Integer
+  ModuleIndex As Integer
+  M4289 As Integer
+  M428F As Long
+End Type
+
+Global gEXEdef_Subs() As T4263
+Global gEXEdef_Arr5Count As Integer
+Global gEXEdef5 As Integer
+Global gEXEdef4 As Integer
+Type T42C7
+  M36B3_count As Integer
+  M42D1 As Integer
+  M42D9 As Integer
+End Type
+
+Global Const gc298A = 257 ' &H101%
+Global Const gc298E = 258 ' &H102%
+Global Const gc2990 = 514 ' &H202%
+Global Const gc2994 = 260 ' &H104%
+Global Const gc2996 = 516 ' &H204%
+Global Const gc2998 = 4356 ' &H1104%
+Global Const gc299A = 4612 ' &H1204%
+Global Const gc29A0 = 264 ' &H108%
+Global Const gc29A2 = 520 ' &H208%
+Global Const gc29A4 = 1032 ' &H408%
+Global Const gc29A6 = 16 ' &H10%
+Global Const gc29A8 = 272 ' &H110%
+Global Const gc29AA = 32 ' &H20%
+Global Const gc2A0A = "°³²%&!#@/~{$.|?"
+Global Const gc2A0E = "°Byte§²Boolean§%Integer§&Long§!Single§#Double§@Currency§/Date§~Variant§$String§.Object§"
+Global Const gc2A12 = "  Byt   BooIntLngSngDblCurDatVar   Str"
+Global Const gc2A16 = "  Byt   BooIntLonSinDouCurDatVar   StrConForObj"
+Global Const gc2A1A = "   Byte    BoolInt LongSng Dbl Cur DateVar     Str "
+Global gv2A44 As Integer
+Global Const gc2A46 = 1 ' &H1%
+Global Const gc2A48 = 2 ' &H2%
+Global Const gc2A4A = 3 ' &H3%
+Global Const gc2A4C = 4 ' &H4%
+Global Const gc2A4E = 5 ' &H5%
+Global Const gc2A50 = 6 ' &H6%
+Global Const gc2A52 = 7 ' &H7%
+Global Const gc2A54 = 8 ' &H8%
+Global Const gc2A56 = 9 ' &H9%
+Global Const gc2A58 = 10 ' &HA%
+Global Const gc2A5A = 11 ' &HB%
+Global Const gc2A5C = 12 ' &HC%
+Global Const gc2A5E = 13 ' &HD%
+Global Const gc2A60 = 16 ' &H10%
+Global Const gc2A62 = 31 ' &H1F%
+Global Const gc2A64 = 32 ' &H20%
+Global Const gc2A66 = 33 ' &H21%
+Global Const gc2A68 = 34 ' &H22%
+Global Const gc2A6A = 35 ' &H23%
+Global Const gc2A70 = 38 ' &H26%
+Global Const gc2A72 = 39 ' &H27%
+Global Const gc2A78 = 50 ' &H32%
+Global Const gc2A84 = 9 ' &H9%
+Global Const gc2A86 = 10 ' &HA%
+Global Const gc2A88 = 11 ' &HB%
+Global Const gc2A8A = 12 ' &HC%
+Global Const gc2A8E = 16 ' &H10%
+Global Const gc2A94 = 31 ' &H1F%
+Type T4915
+  M32C8 As Integer
+  M32D1 As Integer
+  M32DA As Integer
+  M32E2 As String * 14
+  M32ED As Long
+  M32F4 As Long
+  M32FA As Long
+  M3300 As Long
+  M3306 As Long
+  M330E As Long
+  M3315 As Long
+  M331C As Long
+  M3325(1 To 4) As Integer
+  M3331(1 To 4) As Integer
+  M3337(1 To 4) As Integer
+  M333D As Long
+  M3346 As Long
+  M334F As Long
+  M3358 As Long
+End Type
+
+Type T4922
+  M3377 As Long
+  M337F As Long
+  ModuleTableEntryCount As Integer
+  MFormsCount As Integer
+  M3399 As Long
+  M33A3 As Long
+  M33AD As Long
+  M33B7 As Long
+  M33C1 As Integer
+  M33CB As Long
+  M33D5 As Integer
+  M33DE As Long
+  M32FA As Integer
+  M3300 As Integer
+End Type
+
+Type T492F
+  M41AD As T4938
+  M41B7 As T4938
+  M5A03 As Long
+  M34FD As Integer
+  M3CF5 As Integer
+  M5A0C As Long
+  M6692 As Long
+End Type
+
+Global gv2C22 As T492F
+Type T66A1
+  M66AC As Integer
+  M34FD As Integer
+  M3300 As Integer
+  M66B2 As Integer
+  M66B8 As Integer
+  M66BE As Integer
+  M5D92 As T4938
+  M5BBC As Long
+End Type
+
+Type T3425
+  M5A60 As Long
+  M5A68 As Long
+  statSize As Integer
+  M416F As Integer
+  M66C4 As Long
+End Type
+
+Global gv2CCC As T3425
+Type T66D3
+  M3407 As Integer
+  M3412 As Integer
+  M341A As Long
+  M66CC As T3425
+  M34FD As Integer
+  M3CF5 As Integer
+  M41AD As T4938
+  M41B7 As T4938
+  M4243 As Integer
+  M424A As Integer
+  M4251 As Integer
+  M41CD As T4938
+  M58F7 As Integer
+End Type
+
+Global gv2D4E As T66D3
+Type T66E9
+  M5C6D As Integer
+  M3D3B As Integer
+  M5BBC As Long
+End Type
+
+Type T66F3
+  M5EBD As Integer
+  M5EC8 As Integer
+  Entries As Integer
+  Flags As Integer
+End Type
+
+Global gv2DEC As T66F3
+Type T6711
+  M4B20 As Integer
+  M41AD As T4938
+  M5A03 As Integer
+  M4B5E As Integer
+  M6720 As Integer
+  M6729 As Long
+End Type
+
+Global gv2E2E As T6711
+Global gv2E4C As T4915
+Global gv2EA8 As Integer
+Global gv2EAC As T4922
+Global gv2ED8 As Integer
+Global Const gc2EDC = -1 ' &HFFFF%
+Global Const gc2EDE = 2 ' &H2%
+Global Const gc2EE0 = 4 ' &H4%
+Global Const gc2EE2 = 5 ' &H5%
+Global Const gc2EE4 = 6 ' &H6%
+Global Const gc2EE6 = 57 ' &H39%
+Global Const gc2EEA = 9 ' &H9%
+Global Const gc2EEC = 11 ' &HB%
+Global Const gc2EEE = 12 ' &HC%
+Global Const gc2EF0 = 13 ' &HD%
+Global Const gc2EF2 = 14 ' &HE%
+Global Const gc2EF4 = 15 ' &HF%
+Global Const gc2EF6 = 17 ' &H11%
+Global gv2EF8(-2 To 17) As Integer
+Type T6825
+  M5E83 As Integer
+  M5E8D As Integer
+  M5E97 As Integer
+  M6832 As Integer
+  M5DA7 As Integer
+  M5340 As Integer
+  M5C3E As Integer
+End Type
+
+Global gv2F50 As T6825
+Global gModuleVAEnd As Long
+Global gModuleVAStart As Long
+Type T6859
+  subRef_M3C6A As Integer
+  M6866 As String
+  Name As String
+  M6426 As Integer
+  M36B3_count As Integer
+  M4CCD As Integer
+  M388F As Integer
+  M574B As String
+End Type
+
+Global gv2FBE As T6859
+Global Const gc2FD6 = 44 ' &H2C%
+Global gv2FD8 As Integer
+Global gv2FDA As Integer
+Global gv2FDC As Integer
+Global gv2FDE As Integer
+Type T49CC
+  M36B3_count As Integer
+  StringBuffOffs As Integer
+  M4950 As Integer
+  M49D8 As Integer
+  M49E2 As Long
+  Size As Integer
+End Type
+
+Global Const gc3018 = 24576 ' &H6000%
+Global Const gc301A = 16384 ' &H4000%
+Global Const gc301C = 8192 ' &H2000%
+Global gv301E As Integer
+Global Const gc3020 = -32768 ' &H8000%
+Global Const gc3022 = -8192 ' &HE000%
+Global Const gc3024 = -16384 ' &HC000%
+Global Const gc3026 = -24576 ' &HA000%
+Global Const gc3028 = -8192 ' &HE000%
+Global Const gc302A = 4096 ' &H1000%
+Global g_gbl() As T49CC
+Global gEXEdef6_Num_scopes As Integer
+Global gLWhatEver As Integer
+Global gL0Min As Integer
+Global gL1Max As Integer
+Global gL1Min As Integer
+Global gL0Max As Integer
+Global gL3Max As Integer
+Global gL3Min As Integer
+Global gL2Max As Integer
+Global gL2Min As Integer
+Global gL4Max As Integer
+Type T4B07
+  M6894 As T42C7
+  Size As Integer
+  M689A As Integer
+  M68A4 As Long
+  owningScope As Integer
+  M6877 As Integer
+  Count As Integer
+End Type
+
+Global gEXEdefEntries() As T4B07
+Global gEXEdefEntriesCount1 As Integer
+Global gEXEdefEntriesCount2 As Integer
+Global gv30F0() As Integer
+Global gblsCountVars As Integer
+Global gIs3124 As Integer
+Global gv3126() As Integer
+Global gIs3158 As Integer
+Global gv315A As Integer
+Global gv315C As Integer
+Global gv315E As Integer
+Global gv3160 As Integer
+Type T32BB
+  M32C8 As Integer
+  M32D1 As Integer
+  M32DA As Integer
+  M32E2 As String * 14
+  M32ED As Long
+  M32F4 As Long
+  M32FA As Long
+  M3300 As Long
+  M3306 As Long
+  M330E As Long
+  M3315 As Long
+  M331C As Long
+  M3325(1 To 4) As Integer
+  M332B As Long
+  M3331(1 To 4) As Integer
+  M3337(1 To 4) As Integer
+  M333D As Long
+  M3346 As Long
+  M334F As Long
+  M3358 As Long
+End Type
+
+Global gv323E As T32BB
+Type T336A
+  M3377 As Long
+  M337F As Long
+  ModuleTableEntryCount As Integer
+  MFormsCount As Integer
+  M3399 As Long
+  M33A3 As Long
+  M33AD As Long
+  M33B7 As Long
+  M33C1 As Long
+  M33CB As Long
+  M33D5 As Long
+  M33DE As Long
+  M32FA As Long
+  M33E8 As Long
+End Type
+
+Global gv3318 As T336A
+Type T33FB
+  M3407 As Integer
+  M3412 As Integer
+  M341A As Long
+  M66CC As T3425
+  M34FD As Integer
+  M3CF5 As Integer
+  M41AD As T4938
+  M41B7 As T4938
+  M4243 As Integer
+  M6934 As Integer
+  M424A As Long
+  M4251 As Long
+  M41CD As T4938
+End Type
+
+Global gv33BE As T33FB
+Type T6945
+  M4B20 As Long
+  M41AD As T4938
+  M5A03 As Integer
+  M4B5E As Integer
+  M6720 As Long
+  M6729 As Long
+End Type
+
+Global gv3450 As T6945
+Type T55A6
+  M34F5 As Integer
+  Flags As Integer
+  M3503 As Integer
+  M55B9 As Integer
+  M55C2 As Integer
+  M6894 As T42C7
+End Type
+
+Type T695D
+  M54E9 As Long
+  M6968 As Long
+End Type
+
+Type T696F
+  M697E As Long
+  M6984 As Long
+  M698A As Long
+  M3D0D As Long
+End Type
+
+Global Const gc34EA = 29999 ' &H752F%
+Global gv34EC As Long
+Global gVACmdStart As Long
+Global gv34F4 As Integer
+Global gv34F6 As Integer
+Global gv34FA As Integer
+Global Const gc34FC = 1 ' &H1%
+Global Const gc34FE = 2 ' &H2%
+Global Const gc3500 = 20 ' &H14%
+Global Const gc3504 = 22 ' &H16%
+Type T6A40
+  VOffset As Long
+  Name As Variant
+  M6A4D As Integer
+  TypeCode_M5F96 As Integer
+End Type
+
+Global gv353A() As T6A40
+Global gv356C As Integer
+Global gv356E() As Integer
+Type T5679
+  M6894 As T42C7
+  Size As Integer
+  hFile As Integer
+  StringBuffOffs As Integer
+  M6877 As Integer
+End Type
+
+Global Const gc35D0 = -12288 ' &HD000%
+Global gv35D4() As T5679
+Global gv3606 As String
+Global gv360A As Integer
+Global gv360C() As Integer
+Global gv3640() As T5679
+Global gv3672 As String
+Global gv3676 As Integer
+Global gv3678() As Integer
+Global gv36AA As Integer
+Global gv36AE() As T5679
+Global gv36E0 As String
+Global gv36E4 As Integer
+Global gv36E6() As Integer
+Global gv3718 As Integer
+Global gv371A As Integer
+Global gv371C As Integer
+Global gv371E As Integer
+Global gv3720() As Integer
+Global gv3752 As Integer
+Global gv3754 As Integer
+Type T5696
+  subRef_M3C6A As Integer
+  M56A4 As Integer
+  Size As Integer
+  M56AD As Integer
+  M56B4 As Integer
+  M56BF As Integer
+End Type
+
+Global gEXEdefEntries2() As T5696
+Global g_userTypesCount As Integer
+Global gEXEdef_Arr1() As T55A6
+Global gEXEdef_Arr1Count As Integer
+Global gEXEdef_Arr2() As T695D
+Global gEXEdef_Arr2Count As Integer
+Type T4943
+  M4950 As Integer
+  Size As Integer
+  M42D9 As Integer
+  M4959 As Integer
+  Name As String
+  M403B As Integer
+  hFile As Long
+End Type
+
+Type T4964
+  hFile As Integer
+  Size As Integer
+  M36B3_count As T42C7
+  M42D9 As Integer
+  M6877 As Integer
+  Name As String
+End Type
+
+Global gv38BA() As T4943
+Global gv38EC As Integer
+Global gv38F0() As T5679
+Global gv3922 As Integer
+
